@@ -6,11 +6,14 @@ require('mongoose-type-url');
 mongoose.set('strictQuery', false);
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const path = require('path');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // support json encoded bodies
+const logger = require('morgan');
 
+app.use(logger('dev'));
 const cors = require('cors');
 const { json } = require('body-parser');
 const corsOptions = {
@@ -20,6 +23,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
 //Connection
 mongoose.connect(
   // 'mongodb://localhost:27017/itemsDB'
@@ -76,8 +80,18 @@ const item2 = new Item({
 });
 // console.log(item2);
 
-// item2.save();
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
+app.get('*', function (_, res) {
+  res.sendFile(
+    path.join(__dirname, './client/build/index.html'),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
 app.get('/api', (req, res) => {
   Item.find({ isSold: false }, function (err, foundItems) {
     if (foundItems) {
