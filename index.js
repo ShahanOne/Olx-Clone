@@ -77,7 +77,7 @@ const item2 = new Item({
 });
 // console.log(item2);
 
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+// app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 // app.get('*', function (_, res) {
 //   res.sendFile(
