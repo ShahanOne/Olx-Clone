@@ -11,9 +11,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // support json encoded bodies
-const logger = require('morgan');
+// const logger = require('morgan');
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 const cors = require('cors');
 const { json } = require('body-parser');
 const corsOptions = {
@@ -82,16 +82,16 @@ const item2 = new Item({
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.get('*', function (_, res) {
-  res.sendFile(
-    path.join(__dirname, './client/build/index.html'),
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
+// app.get('*', function (_, res) {
+//   res.sendFile(
+//     path.join(__dirname, './client/build/index.html'),
+//     function (err) {
+//       if (err) {
+//         res.status(500).send(err);
+//       }
+//     }
+//   );
+// });
 app.get('/api', (req, res) => {
   Item.find({ isSold: false }, function (err, foundItems) {
     if (foundItems) {
