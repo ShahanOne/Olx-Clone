@@ -79,6 +79,17 @@ const item2 = new Item({
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
+// app.get('*', function (_, res) {
+//   res.sendFile(
+//     path.join(__dirname, '../client/build/index.html'),
+//     function (err) {
+//       if (err) {
+//         res.status(500).send(err);
+//       }
+//     }
+//   );
+// });
+
 app.get('/api', (req, res) => {
   Item.find({ isSold: false }, function (err, foundItems) {
     if (foundItems) {
