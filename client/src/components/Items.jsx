@@ -4,17 +4,18 @@ import ItemCard from './ItemCard';
 function Items(props) {
   const [itemData, setItemData] = useState('');
 
-  useEffect(() => {
-    async function getItemsData() {
-      await fetch('/api', {
-        mode: 'no-cors',
-      })
-        .then((res) => res.json())
-        .then((data) => setItemData(data));
-    }
+  // useEffect(() => {
+  // async function getItemsData() {
+  // await
+  fetch('/api', {
+    mode: 'no-cors',
+  })
+    .then((res) => res.json())
+    .then((data) => setItemData(data));
+  // }
 
-    getItemsData();
-  }, []);
+  //   getItemsData();
+  // }, []);
   // console.log(itemData);
   return (
     <div className="itemsDiv">
