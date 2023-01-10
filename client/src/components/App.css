@@ -1,0 +1,323 @@
+/* NAVBAR */
+nav {
+  padding: 1% 0%;
+  text-align: end;
+  /* display: inline-flexbox; */
+  background-color: #ffb812;
+}
+
+.navLink {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.2%;
+  background-color: #ffb812;
+  color: #fbf5cb;
+  border: 0;
+}
+/* .login {
+  font-size: 1.1rem;
+} */
+.navLink:hover {
+  color: #fdfaee;
+}
+.navBrand {
+  margin-right: 60%;
+  color: #fbf5cb;
+  font-family: cursive;
+  font-size: 1.85rem;
+}
+
+.navBrand:hover {
+  color: #fdfaee;
+}
+/* MAIN */
+.mainDiv {
+  color: #402907;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.itemsDiv {
+  background-color: #fef1d1;
+  padding-left: 6%;
+}
+/* ITEM CARD */
+.itemCard {
+  background-color: #f9f3e4;
+  box-shadow: 0 8px 32px 0 rgba(167, 63, 183, 0.127);
+  width: 17rem;
+  margin: 2%;
+  /* padding-top: 1.2%; */
+  text-align: center;
+  display: inline-block;
+  border-radius: 0.3rem;
+}
+.soldBtn {
+  background-color: rgba(10, 193, 10, 0.666);
+  color: rgb(253, 253, 253);
+  font-size: 1rem;
+  padding: 1% 2% 2%;
+  margin: 5%;
+  border-radius: 1rem;
+  border: 0;
+}
+
+.buyBtn {
+  background-color: rgba(255, 209, 69, 0.968);
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  padding: 4%;
+  margin: 5%;
+  border-radius: 05rem;
+  border: 0;
+}
+.buyBtn:hover {
+  background-color: rgba(248, 188, 6, 0.889);
+}
+.itemImg {
+  height: 13rem;
+  width: 17rem;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+/* LOG-IN */
+
+.authenticateDiv {
+  background-color: #33323167;
+  color: #402907;
+  padding: 3% 0 10%;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+.crossIcon {
+  text-align: end;
+  /* display: inline-block; */
+  font-size: 2rem;
+  margin: 0;
+}
+.crossIcon b:hover {
+  cursor: default;
+  color: #6b460d;
+  font-size: 2rem;
+}
+.formDiv {
+  margin: 5% 34%;
+  padding: 0% 1% 2% 2.5%;
+  background-color: #faf8ef;
+  border-radius: 0.5rem;
+  color: #402907;
+  /* position: fixed; */
+}
+.authenticateDiv input {
+  display: block;
+  border: 0;
+  border-radius: 4px;
+  width: 90%;
+  height: 2rem;
+  margin: 3% 0;
+}
+.authenticateDiv input:focus {
+  outline: none !important;
+}
+.authenticateDiv label {
+  font-size: 1.15rem;
+  margin: 1% 0;
+}
+.loginBtn {
+  background-color: #9f8772;
+  color: rgb(255, 255, 255);
+  width: 92%;
+  font-size: 1.45rem;
+  padding: 1%;
+  margin: 1% 0;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(64, 57, 57);
+}
+.loginBtn:hover {
+  background-color: #594545;
+  cursor: pointer;
+}
+.registerBtn {
+  background-color: #594545;
+  color: rgb(255, 255, 255);
+  width: 92%;
+  font-size: 1.5rem;
+  padding: 1%;
+  margin: 1% 0;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(64, 57, 57);
+}
+.registerBtn:hover {
+  background-color: #9f8772;
+  cursor: pointer;
+}
+
+/* USER PAGE */
+.userPageDiv {
+  background-color: #fef1d1;
+  padding: 1% 0;
+}
+.userPageText i {
+  font-size: 1.2rem;
+  margin: 0% 2%;
+  padding: 0.1% 1%;
+  border: 1px solid #d7b55f;
+  border-radius: 0.6rem;
+  color: #535252;
+  background-color: #fefaeb;
+  font-style: oblique;
+}
+.userPageText i img {
+  height: 1rem;
+  margin-right: 0.3%;
+}
+.refresh {
+  text-align: end;
+  padding: 0 2%;
+}
+.refresh b {
+  color: #535252;
+  border-radius: 0.8rem;
+  border: 1px solid #d7b55f;
+  padding: 1% 2%;
+  background-color: #fefaeb;
+}
+.refresh b:hover {
+  color: white;
+  background-color: #f8bd51;
+  cursor: pointer;
+}
+
+/* LIST ITEM */
+.itemFormDiv {
+  margin: 2% 25% 15%;
+  padding: 1.5% 2% 2%;
+  background-color: #faf8ef;
+  border-radius: 0.5rem;
+}
+.itemFormDiv input {
+  display: block;
+  border: 0;
+  border-radius: 4px;
+  width: 90%;
+  height: 2rem;
+  margin: 3% 0;
+}
+
+.itemFormDiv input:focus {
+  outline: none !important;
+}
+.itemFormDiv label {
+  font-size: 1.15rem;
+  margin: 1% 0;
+}
+.messageText {
+  margin: 0;
+}
+.addItemBtn {
+  background-color: #9f8772;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  width: 60%;
+
+  padding: 1%;
+  margin: 3% 0;
+  border-radius: 1rem;
+  border: 1px solid rgb(64, 57, 57);
+}
+.addItemBtn:hover {
+  background-color: #594545;
+}
+/* MY ACCOUNT */
+.myAccountDiv {
+  padding-left: 3%;
+}
+.listedItemsDiv {
+  min-height: 20rem;
+}
+.boughtItemsDiv {
+  min-height: 20rem;
+}
+.myAccountText {
+  margin: 1% 2% 2%;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.noDataText {
+  margin: 5% 2%;
+}
+.listNewItemBtn {
+  background-color: #594545;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  padding: 1%;
+  margin: 1% 2%;
+  border-radius: 0.5rem;
+  border: 1px solid #594545;
+}
+.listNewItemBtn:hover {
+  background-color: #5b432f;
+}
+
+/* FOOTER */
+
+.footerDiv {
+  background-color: #ffb812;
+}
+.footerText {
+  color: #fbf5cb;
+  padding: 1% 0 0.8%;
+  margin: 0;
+  font-size: 1.1rem;
+}
+.footerText a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f7f0da;
+}
+
+.footerText a:hover {
+  color: #fbfaf9;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 2.5% 0%;
+  }
+  .itemsDiv {
+    padding: 5% 15%;
+  }
+  .itemCard {
+    margin: 8% 0;
+    border-radius: 2rem;
+  }
+  .itemImg {
+    border-radius: 2rem 2rem 0 0;
+  }
+  .authenticateDiv {
+    padding: 20% 0 1%;
+  }
+  .formDiv {
+    margin: 22% 10%;
+    padding: 4% 2% 8% 6%;
+  }
+  .userPageText i {
+    padding: 1% 5%;
+    border-radius: 0.9rem;
+    font-size: 1.3rem;
+  }
+
+  .refresh {
+    font-size: 1.2rem;
+  }
+  .itemFormDiv {
+    margin: 10% 5% 60%;
+    padding: 10% 4% 8%;
+  }
+  .addItemBtn {
+    font-size: 1.35rem;
+    width: 75%;
+    margin: 8% 0;
+  }
+}
