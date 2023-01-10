@@ -14,7 +14,7 @@ function Items(props) {
     }
 
     getItemsData();
-  }, [props.seed]);
+  }, []);
   // console.log(itemData);
   return (
     <div className="itemsDiv">
