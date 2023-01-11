@@ -6,7 +6,8 @@ function Items(props) {
 
   useEffect(() => {
     async function getItemsData() {
-      await fetch(`http://localhost:3001/api`)
+      await fetch(`
+https://olxcloneserver.cyclic.app/api`)
         .then((res) => res.json())
         .then((data) => setItemData(data));
 
