@@ -39,6 +39,11 @@ nav {
 .itemsDiv {
   background-color: #fef1d1;
   padding-left: 6%;
+  min-height: 30rem;
+}
+.loading {
+  font-size: 2rem;
+  color: #fbfaf9;
 }
 /* ITEM CARD */
 .itemCard {

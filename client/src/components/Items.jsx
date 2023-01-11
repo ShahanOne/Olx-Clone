@@ -8,7 +8,7 @@ function Items(props) {
     async function getItemsData() {
       await fetch(`http://localhost:3001/api`)
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => setItemData(data));
 
       // .then((data) => console.log(data));
     }
@@ -19,19 +19,21 @@ function Items(props) {
   // console.log(itemData);
   return (
     <div className="itemsDiv">
-      {itemData
-        ? itemData.map((item, index) => (
-            <ItemCard
-              key={index}
-              itemName={item.name}
-              itemPrice={item.price}
-              itemIsSold={item.isSold}
-              notShowBuyBtn={item.isSold}
-              itemImgUrl={item.imageUrl ? item.imageUrl : ''}
-              onBuyClick={() => props.onBuyClick(item)}
-            />
-          ))
-        : 'loading...'}
+      {itemData ? (
+        itemData.map((item, index) => (
+          <ItemCard
+            key={index}
+            itemName={item.name}
+            itemPrice={item.price}
+            itemIsSold={item.isSold}
+            notShowBuyBtn={item.isSold}
+            itemImgUrl={item.imageUrl ? item.imageUrl : ''}
+            onBuyClick={() => props.onBuyClick(item)}
+          />
+        ))
+      ) : (
+        <p className="loading">Loading...</p>
+      )}
     </div>
   );
 }
