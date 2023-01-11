@@ -3,9 +3,10 @@ import ItemCard from './ItemCard';
 
 function Items(props) {
   const [itemData, setItemData] = useState('');
+
   useEffect(() => {
     async function getItemsData() {
-      await fetch('/api', {
+      await fetch('http://localhost:3001/api', {
         mode: 'no-cors',
       })
         .then((res) => res.json())
@@ -14,6 +15,7 @@ function Items(props) {
 
     getItemsData();
   }, [props.seed]);
+
   // console.log(itemData);
   return (
     <div className="itemsDiv">
