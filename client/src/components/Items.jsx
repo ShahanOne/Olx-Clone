@@ -6,15 +6,15 @@ function Items(props) {
 
   useEffect(() => {
     async function getItemsData() {
-      await fetch('http://localhost:3001/api', {
-        mode: 'no-cors',
-      })
+      await fetch(`http://localhost:3001/api`)
         .then((res) => res.json())
-        .then((data) => setItemData(data));
+        .then((data) => console.log(data));
+
+      // .then((data) => console.log(data));
     }
 
     getItemsData();
-  }, [props.seed]);
+  }, []);
 
   // console.log(itemData);
   return (
