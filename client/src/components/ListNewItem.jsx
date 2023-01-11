@@ -27,7 +27,7 @@ function ListNewItem(props) {
     props.onTap();
 
     try {
-      const res = await fetch('http://localhost:3001/new-item', {
+      const res = await fetch('https://olxcloneserver.cyclic.app/new-item', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

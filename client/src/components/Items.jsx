@@ -15,7 +15,7 @@ https://olxcloneserver.cyclic.app/api`)
     }
 
     getItemsData();
-  }, []);
+  }, [props.seed]);
 
   // console.log(itemData);
   return (
