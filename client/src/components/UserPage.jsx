@@ -35,7 +35,7 @@ function UserPage(props) {
     handleRerender();
 
     try {
-      const res = await fetch('http://localhost:3001/buy-item', {
+      const res = await fetch('https://olxcloneserver.cyclic.app/buy-item', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
