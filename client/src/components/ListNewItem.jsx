@@ -48,30 +48,38 @@ function ListNewItem(props) {
   };
 
   return (
-    <div className="itemFormDiv">
-      <form onSubmit={handleSubmit}>
+    <div className=" font-allerta lg:my-8 px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
+      <form
+        className=" p-4 lg:p-[2%] bg-[#ddd2f3] rounded-lg"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="itemName">
-          Item Name <span style={{ color: 'red' }}>*</span>
+          Item Name <span className="text-red-500">*</span>
         </label>
         <input
+          className="block border-none rounded-sm w-[90%] h-[2rem] m-[3%_0] focus:outline-none"
           id="itemName"
           type="text"
           value={itemName}
           onChange={handleNameChange}
           name="itemName"
         />
-        <label htmlFor="itemPrice">
-          Item Price <span style={{ color: 'red' }}>*</span>
+        <label className="text-md m-[1%_0]" htmlFor="itemPrice">
+          Item Price <span className="text-red-500">*</span>
         </label>
         <input
+          className="block border-none rounded-sm w-[90%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
           id="itemPrice"
           type="number"
           value={itemPrice}
           onChange={handlePriceChange}
           name="itemPrice"
         />
-        <label htmlFor="itemImgUrl">Item Image Url/Link</label>
+        <label className="text-md m-[1%_0]" htmlFor="itemImgUrl">
+          Item Image Url/Link
+        </label>
         <input
+          className="block border-none rounded-sm w-[90%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
           id="itemImgUrl"
           type="text"
           value={itemImgUrl}
@@ -80,11 +88,11 @@ function ListNewItem(props) {
         />
         <div className="messageDiv">
           <p
-            className="messageText"
+            className="m-0"
             style={
               itemName && itemPrice
                 ? { visibility: 'hidden' }
-                : { color: 'red' }
+                : { color: '#9b1414' }
             }
           >
             Please fill in the required fields *
@@ -93,9 +101,10 @@ function ListNewItem(props) {
         <center>
           {' '}
           <button
-            className="addItemBtn"
+            className="bg-[#8c52ff]  border-[#8c51ff] hover:bg-[#9460fd]  text-white text-xl w-[66%] p-[2%] m-[3%_0] rounded-2xl border-2"
             type={itemName && itemPrice ? 'submit' : 'button'}
           >
+            {' '}
             Add New Item
           </button>
         </center>{' '}

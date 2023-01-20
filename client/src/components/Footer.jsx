@@ -1,12 +1,18 @@
 function Footer() {
   return (
-    <div className="footerDiv">
+    <div className="bg-[#8c52ff]">
       <center>
-        <p className="footerText">
+        <p className="text-[#f1f1f6] p-[1%] m-0 text-lg">
           <b> {'</>'} </b> by{' '}
-          <a href="https://shahanone.wordpress.com"> Shahan.One</a>
+          <a
+            className="text-xl no-underline font-semibold text-[#f1f1f6]hover: text-[#fbfaf9]"
+            href="https://shahanone.wordpress.com"
+          >
+            {' '}
+            Shahan.One
+          </a>
         </p>
-        <p className="footerText">
+        <p className="text-[#f1f1f6] p-[1%] m-0 text-lg">
           <b> All rights reserved, 2023</b>
         </p>
       </center>

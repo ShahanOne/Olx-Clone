@@ -9,32 +9,39 @@ function ItemCard(props) {
   }
 
   return (
-    <div className="itemCard">
+    <div className="shadow-[0_10px_30px_rgba(140, 82, 255, 0.9)] bg-[#ffffff] w-[16rem] mx-2 my-8 text-center py-2 px-2 rounded-lg">
       {!imgLoad ? (
         <img
-          className="itemImg"
+          className="h-[12rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
           onError={handleError}
           src={props.itemImgUrl}
           alt="item-img"
         />
       ) : (
         <img
-          className="itemImg"
-          src={props.itemImgUrl ? '/items4.webp' : '/items2.png'}
+          className=" h-[12rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
+          src={props.itemImgUrl ? '/gif2.gif' : '/items4.webp'}
           alt="item-img"
         />
       )}
-      <p className="itemPrice">
-        <b>₹ {props.itemPrice}</b>
+      <p className=" text-lg my-4 font-sans font-semibold">
+        ₹ {props.itemPrice}
       </p>
-      <p className="itemName"> {props.itemName}</p>
-      <button type="button" className="soldBtn">
+      <p className="text-xl"> {props.itemName}</p>
+      <button
+        className=" bg-[#b592ff] cursor-default text-[rgb(253,253,253)] text-base px-3 py-2 mx-[2.5%] my-[5%] rounded-2xl shadow-md border-none"
+        type="button"
+      >
         {props.itemIsSold ? 'sold' : 'assured✔'}
       </button>
       {props.notShowBuyBtn ? (
         ''
       ) : (
-        <button type="button" onClick={props.onBuyClick} className="buyBtn">
+        <button
+          type="button"
+          onClick={props.onBuyClick}
+          className="bg-[#8c52ff] shadow-xl hover:bg-[#9460fd] text-white text-base p-3 mx-[2.5%] my-[5%] rounded-2xl border-none"
+        >
           buy now
         </button>
       )}

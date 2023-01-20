@@ -66,18 +66,28 @@ function UserPage(props) {
         Nav4={'Sign Out'}
         onNav4={handleSignOut}
       />
-      <div className="userPageDiv">
-        <p className="userPageText">
-          <i>
-            <img src="/account2.png" alt="acc" /> {props?.userName}{' '}
-          </i>
-        </p>
-        <p className="refresh">
-          <b onClick={handleRerender}>
-            {' '}
-            <img src="/refresh.png" alt="refresh" /> Refresh
-          </b>
-        </p>
+      <div className="userPageDiv bg-[#f0ebfb]">
+        <div className="grid grid-cols-3 font-fredoka py-4 pl-8 bg-[#774ad1]">
+          <div className="userPageText my-4 lg:my-12 text-white text-2xl md:text-3xl lg:text-4xl">
+            Hello {props.userName}
+          </div>
+          <div className="text-center">
+            <img
+              className="inline-block w-24 sm:w-40"
+              src="/avatar2.png"
+              alt=""
+            />
+          </div>
+          <div className="refresh text-end my-4 lg:my-12 pr-8">
+            <span
+              className="text-white hover:cursor-pointer text-2xl hover:text-[#f5f1ff]"
+              onClick={handleRerender}
+            >
+              Refresh
+            </span>
+          </div>
+        </div>
+
         {!isNewClicked && !isAccountClicked ? (
           <div className="userHomeDiv">
             <Items seed={seed} onBuyClick={handleBuy} />

@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div className="mainDiv">
+    <div className=" text-[#2e0f6a] font-allerta">
       {isAuthenticated ? (
         <UserPage
           userId={userInfo._id}
@@ -73,13 +73,26 @@ function App() {
               />
             ))}
           <Navbar
-            Nav1={'Home'}
-            onNav1={handleHome}
-            Nav2={'Login/Signup'}
-            onNav2={handleSignInClick}
+            Nav3={'Home'}
+            onNav3={handleHome}
+            Nav4={'Login/Signup'}
+            onNav4={handleSignInClick}
             // Nav3={}
             // onNav3={handleSignClick}
           />
+          <div className="welcome bg-[#8c52ff] pt-8 pb-28 lg:p-0">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="/olxlandingphone4.png"
+              />
+              <img src="/olxlanding1.png" alt="landing" />
+            </picture>
+          </div>
+
+          <div className="bg-purple-800 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
+            Let's Browse !{' '}
+          </div>
           <Items seed={''} onBuyClick={handleSignInClick} />
         </div>
       )}

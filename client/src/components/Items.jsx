@@ -19,23 +19,28 @@ https://olxcloneserver.cyclic.app/api`)
 
   // console.log(itemData);
   return (
-    <div className="itemsDiv">
+    <>
       {itemData ? (
-        itemData.map((item, index) => (
-          <ItemCard
-            key={index}
-            itemName={item.name}
-            itemPrice={item.price}
-            itemIsSold={item.isSold}
-            notShowBuyBtn={item.isSold}
-            itemImgUrl={item.imageUrl ? item.imageUrl : ''}
-            onBuyClick={() => props.onBuyClick(item)}
-          />
-        ))
+        <div className="bg-[#f0ebfb] px-16 md:px-28 lg:px-36 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-8 min-h-[80rem]">
+          {itemData.map((item, index) => (
+            <ItemCard
+              key={index}
+              itemName={item.name}
+              itemPrice={item.price}
+              itemIsSold={item.isSold}
+              notShowBuyBtn={item.isSold}
+              itemImgUrl={item.imageUrl ? item.imageUrl : ''}
+              onBuyClick={() => props.onBuyClick(item)}
+            />
+          ))}
+        </div>
       ) : (
-        <p className="loading">Loading...</p>
+        <img
+          className="w-full mt-[30%] mb-[80%] md:mb-[30%] lg:mt-0 lg:mb-0"
+          src="/loading.gif"
+        />
       )}
-    </div>
+    </>
   );
 }
 
