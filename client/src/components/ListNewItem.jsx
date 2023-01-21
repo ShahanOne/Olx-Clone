@@ -41,7 +41,9 @@ function ListNewItem(props) {
             userId: props.userId,
           },
         ]),
-      });
+      })
+        .then((res) => res.json())
+        .then((data) => data !== 'poop' && props.newUserData(data));
     } catch (err) {
       console.log(err);
     }
@@ -50,7 +52,7 @@ function ListNewItem(props) {
   return (
     <div className=" font-allerta lg:my-8 px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
       <form
-        className=" p-4 lg:p-[2%] bg-[#ddd2f3] rounded-lg"
+        className="shadow-xl p-4 lg:p-[2%] bg-[#ddd2f3] rounded-lg"
         onSubmit={handleSubmit}
       >
         <label htmlFor="itemName">

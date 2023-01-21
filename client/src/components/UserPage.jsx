@@ -46,14 +46,18 @@ function UserPage(props) {
             itemId: item._id,
           },
         ]),
-      });
+      })
+        .then((res) => res.json())
+        .then((data) => data !== 'poop' && props.newUserData(data));
     } catch (err) {
       console.log(err);
     }
     // window.alert('item bought, view in My Account');
     // console.log(item);
   }
-
+  function newData(data) {
+    props.newUserData(data);
+  }
   return (
     <>
       <Navbar
@@ -100,6 +104,7 @@ function UserPage(props) {
           />
         ) : isNewClicked ? (
           <ListNewItem
+            newUserData={newData}
             onTap={handleRerender}
             userName={props.userName}
             userId={props.userId}

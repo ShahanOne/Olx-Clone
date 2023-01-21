@@ -38,6 +38,7 @@ https://olxcloneserver.cyclic.app/api`)
         <img
           className="w-full mt-[30%] mb-[80%] md:mb-[30%] lg:mt-0 lg:mb-0"
           src="/loading.gif"
+          alt="loading"
         />
       )}
     </>

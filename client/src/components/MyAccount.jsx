@@ -52,7 +52,7 @@ function MyAccount(props) {
                 key={index}
                 itemName={item.name}
                 itemPrice={item.price}
-                itemIsSold={item.isSold}
+                itemIsSold={''}
                 notShowBuyBtn={true}
                 itemImgUrl={item.imageUrl ? item.imageUrl : ''}
               />

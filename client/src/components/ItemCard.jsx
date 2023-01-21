@@ -32,7 +32,8 @@ function ItemCard(props) {
         className=" bg-[#b592ff] cursor-default text-[rgb(253,253,253)] text-base px-3 py-2 mx-[2.5%] my-[5%] rounded-2xl shadow-md border-none"
         type="button"
       >
-        {props.itemIsSold ? 'sold' : 'assured✔'}
+        {/* add to cart🛒 */}
+        {props.itemIsSold ? 'sold✅' : 'assured✔'}
       </button>
       {props.notShowBuyBtn ? (
         ''

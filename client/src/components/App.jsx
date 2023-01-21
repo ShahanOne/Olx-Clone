@@ -23,7 +23,9 @@ function App() {
     setUserInfo(data);
     setAuthenticated((value) => !value);
   }
-
+  function refreshUserData(data) {
+    setUserInfo(data);
+  }
   function login() {
     setSignClick(false);
   }
@@ -48,6 +50,7 @@ function App() {
     <div className=" text-[#2e0f6a] font-allerta">
       {isAuthenticated ? (
         <UserPage
+          newUserData={refreshUserData}
           userId={userInfo._id}
           userName={userInfo.username}
           boughtItems={userInfo.boughtItems}
