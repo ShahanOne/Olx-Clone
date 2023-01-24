@@ -103,7 +103,7 @@ function ListNewItem(props) {
         <center>
           {' '}
           <button
-            className="bg-[#8c52ff]  border-[#8c51ff] hover:bg-[#9460fd]  text-white text-xl w-[66%] p-[2%] m-[3%_0] rounded-2xl border-2"
+            className="bg-[#8c52ff]  border-[#8c51ff] hover:bg-[#9460fd] shadow-lg active:translate-y-0.5  text-white text-xl w-[66%] p-[2%] m-[3%_0] rounded-2xl border-2"
             type={itemName && itemPrice ? 'submit' : 'button'}
           >
             {' '}

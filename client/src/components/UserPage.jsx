@@ -52,7 +52,7 @@ function UserPage(props) {
     } catch (err) {
       console.log(err);
     }
-    // window.alert('item bought, view in My Account');
+    window.alert('Item bought, view in My Account');
     // console.log(item);
   }
   function newData(data) {
@@ -84,7 +84,7 @@ function UserPage(props) {
           </div>
           <div className="refresh text-end my-4 lg:my-12 pr-8">
             <span
-              className="text-white hover:cursor-pointer text-2xl hover:text-[#f5f1ff]"
+              className="text-white hover:cursor-pointer text-2xl p-4 rounded-lg active:shadow-sm  shadow-lg active:bg-[#8251e5] hover:text-[#f3eeff]"
               onClick={handleRerender}
             >
               Refresh

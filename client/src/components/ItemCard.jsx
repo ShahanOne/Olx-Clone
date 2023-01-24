@@ -41,7 +41,7 @@ function ItemCard(props) {
         <button
           type="button"
           onClick={props.onBuyClick}
-          className="bg-[#8c52ff] shadow-xl hover:bg-[#9460fd] text-white text-base p-3 mx-[2.5%] my-[5%] rounded-2xl border-none"
+          className="bg-[#8c52ff] shadow-xl hover:bg-[#9460fd] active:translate-y-1 text-white text-base p-3 mx-[2.5%] my-[5%] rounded-2xl border-none"
         >
           buy now
         </button>
