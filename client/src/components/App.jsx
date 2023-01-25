@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Navbar from './Navbar';
 import Items from './Items';
@@ -55,6 +55,7 @@ function App() {
           userName={userInfo.username}
           boughtItems={userInfo.boughtItems}
           listedItems={userInfo.listedItems}
+          cartItems={userInfo.cartItems}
           handleSignOut={handleSignOut}
         />
       ) : (
@@ -87,7 +88,7 @@ function App() {
             <picture>
               <source
                 media="(max-width: 600px)"
-                srcset="/olxlandingphone4.png"
+                srcSet="/olxlandingphone4.png"
               />
               <img src="/olxlanding1.png" alt="landing" />
             </picture>
@@ -96,7 +97,12 @@ function App() {
           <div className="bg-purple-800 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
             Let's Browse !{' '}
           </div>
-          <Items seed={''} onBuyClick={handleSignInClick} />
+          <Items
+            seed={''}
+            onBuyClick={handleSignInClick}
+            onCartClick={handleSignInClick}
+            isSignClicked={isSignClick}
+          />
         </div>
       )}
       <Footer />

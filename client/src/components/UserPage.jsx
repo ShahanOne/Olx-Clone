@@ -31,6 +31,7 @@ function UserPage(props) {
     setNewClick(false);
     setAccountClick(false);
   }
+
   async function handleBuy(item) {
     handleRerender();
 
@@ -54,6 +55,27 @@ function UserPage(props) {
     }
     window.alert('Item bought, view in My Account');
     // console.log(item);
+  }
+  async function handleCart(item) {
+    try {
+      const res = await fetch('http://localhost:3001/add-to-cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify([
+          {
+            userId: props.userId,
+            itemId: item._id,
+          },
+        ]),
+      })
+        .then((res) => res.json())
+        .then((data) => data !== 'poop' && props.newUserData(data));
+    } catch (err) {
+      console.log(err);
+    }
+    window.alert('Item added to cart');
   }
   function newData(data) {
     props.newUserData(data);
@@ -94,12 +116,18 @@ function UserPage(props) {
 
         {!isNewClicked && !isAccountClicked ? (
           <div className="userHomeDiv">
-            <Items seed={seed} onBuyClick={handleBuy} />
+            <Items
+              seed={seed}
+              onCartClick={handleCart}
+              onBuyClick={handleBuy}
+            />
           </div>
         ) : isAccountClicked ? (
           <MyAccount
             boughtItems={props?.boughtItems}
             listedItems={props?.listedItems}
+            onBuyClick={handleBuy}
+            cartItems={props?.cartItems}
             addNewItem={handleNewItem}
           />
         ) : isNewClicked ? (
@@ -111,7 +139,11 @@ function UserPage(props) {
           />
         ) : (
           <div className="userHomeDiv">
-            <Items seed={seed} onBuyClick={handleBuy} />
+            <Items
+              seed={seed}
+              onCartClick={handleCart}
+              onBuyClick={handleBuy}
+            />
           </div>
         )}
       </div>
@@ -125,7 +157,3 @@ export default UserPage;
 //posted
 //sell status
 //bought
-
-//  <p className="userTopText">
-//           If you're here, means you are verified, thats great !
-// </p>
