@@ -58,7 +58,7 @@ function UserPage(props) {
   }
   async function handleCart(item) {
     try {
-      const res = await fetch('http://localhost:3001/add-to-cart', {
+      const res = await fetch('https://olxcloneserver.cyclic.app/add-to-cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
