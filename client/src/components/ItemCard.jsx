@@ -43,7 +43,7 @@ function ItemCard(props) {
           <button
             type="button"
             onClick={props.onCartClick}
-            className="bg-[#f4effb] shadow-lg hover:bg-[#f4ecff] text-slate-600 active:translate-y-1 text-base p-3 rounded-2xl border-none"
+            className="bg-[#faf6ff] shadow-md hover:bg-[#ffffff] text-slate-600 active:translate-y-1 text-base p-3 rounded-2xl border-none"
           >
             add to cart🛒
           </button>
