@@ -4,8 +4,19 @@ import './App.css';
 function ListNewItem(props) {
   const [itemName, setName] = useState('');
   const [itemPrice, setPrice] = useState('');
-  const [itemImgUrl, setUrl] = useState('');
+  // const [itemImgUrl, setUrl] = useState('');
+  const [imgUrl, setImgUrl] = useState(); //file
+  const [image, setImage] = useState('');
 
+  function handleImgUpload(e) {
+    // console.log(e.target.files);
+    setImgUrl(URL.createObjectURL(e.target.files[0]));
+    setImage(imgUrl);
+  }
+  function removeImg() {
+    setImage('');
+    setImgUrl('');
+  }
   function handleNameChange(e) {
     const { value } = e.target;
 
@@ -16,12 +27,11 @@ function ListNewItem(props) {
 
     setPrice(value);
   }
-  function handleUrlChange(e) {
-    const { value } = e.target;
+  // function handleUrlChange(e) {
+  //   const { value } = e.target;
 
-    setUrl(value);
-  }
-
+  //   setUrl(value);
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault();
     props.onTap();
@@ -36,7 +46,7 @@ function ListNewItem(props) {
           {
             itemName: itemName,
             itemPrice: itemPrice,
-            itemImgUrl: itemImgUrl,
+            itemImgUrl: imgUrl,
             userName: props.userName,
             userId: props.userId,
           },
@@ -77,17 +87,41 @@ function ListNewItem(props) {
           onChange={handlePriceChange}
           name="itemPrice"
         />
-        <label className="text-md m-[1%_0]" htmlFor="itemImgUrl">
+        <label className="text-md m-[1%_0]" htmlFor="uploadedImg">
           Item Image Url/Link
         </label>
-        <input
+        <br />
+        {/* <input
           className="block border-none rounded-sm w-[90%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
           id="itemImgUrl"
           type="text"
           value={itemImgUrl}
           onChange={handleUrlChange}
           name="itemImgUrl"
+        /> */}
+        <input
+          type="file"
+          id="uploadedImg"
+          className="py-4 file:bg-white file:cursor-pointer file:p-2 hover:file:text-purple-700 file:text-purple-600 file:rounded file:shadow file:border-none"
+          name="uploadedImg"
+          onChange={handleImgUpload}
+          value={image}
+          accept="image/png, image/jpeg,image/jpg,image/webp"
         />
+        {imgUrl ? (
+          <div>
+            {' '}
+            <img src={imgUrl} alt="uploaded-img" />{' '}
+            <button
+              onClick={removeImg}
+              className="p-4 my-4 text-white rounded-lg shadow-md bg-red-500 hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+        ) : (
+          ''
+        )}
         <div className="messageDiv">
           <p
             className="m-0"
