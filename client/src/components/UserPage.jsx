@@ -130,7 +130,7 @@ function UserPage(props) {
                 itemName={viewItem.name}
                 itemPrice={viewItem.price}
                 itemImg={viewItem.imageUrl}
-                itemDescription={viewItem.itemDescription}
+                itemDescription={viewItem.description}
                 onBuy={handleBuy}
                 onCart={handleCart}
                 onBack={handleBack}
@@ -179,7 +179,7 @@ function UserPage(props) {
                 itemName={viewItem.name}
                 itemPrice={viewItem.price}
                 itemImg={viewItem.imageUrl}
-                itemDescription={viewItem.itemDescription}
+                itemDescription={viewItem.description}
                 onBuy={handleBuy}
                 onCart={handleCart}
                 onBack={handleBack}
