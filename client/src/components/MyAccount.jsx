@@ -4,7 +4,7 @@ function MyAccount(props) {
   return (
     <div className="myAccountDiv px-[15%] lg:px-[12%] pt-[5%]">
       <div className="wishlistDiv ">
-        <p className="myAccountText text-2xl">My Wishlist :-</p>
+        <p className="myAccountText text-2xl">My Cart :-</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {props.cartItems?.length ? (
             props.cartItems.map((item, index) => (
@@ -13,8 +13,9 @@ function MyAccount(props) {
                 itemName={item.name}
                 itemPrice={item.price}
                 itemIsSold={item.isSold}
-                onBuyClick={() => props.onBuyClick(item)}
-                notShowCartBtn={true}
+                showCartBtn={true}
+                showViewBtn={true}
+                onViewClick={() => props.onViewClick(item)}
                 itemImgUrl={item.imageUrl ? item.imageUrl : ''}
               />
             ))
@@ -41,8 +42,6 @@ function MyAccount(props) {
                 itemName={item.name}
                 itemPrice={item.price}
                 itemIsSold={item.isSold}
-                notShowBuyBtn={true}
-                notShowCartBtn={true}
                 itemImgUrl={item.imageUrl ? item.imageUrl : ''}
               />
             ))

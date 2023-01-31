@@ -2,11 +2,13 @@ import Navbar from './Navbar';
 import Items from './Items';
 import ListNewItem from './ListNewItem';
 import MyAccount from './MyAccount';
+import ItemPage from './ItemPage';
 import { useState } from 'react';
 
 function UserPage(props) {
   const [isNewClicked, setNewClick] = useState(false);
   const [isAccountClicked, setAccountClick] = useState(false);
+  const [viewItem, setViewItem] = useState('');
 
   const [seed, setSeed] = useState(1);
 
@@ -31,8 +33,13 @@ function UserPage(props) {
     setNewClick(false);
     setAccountClick(false);
   }
-
-  async function handleBuy(item) {
+  function handleView(item) {
+    setViewItem(item);
+  }
+  function handleBack() {
+    setViewItem('');
+  }
+  async function handleBuy() {
     handleRerender();
 
     try {
@@ -44,7 +51,7 @@ function UserPage(props) {
         body: JSON.stringify([
           {
             userId: props.userId,
-            itemId: item._id,
+            itemId: viewItem._id,
           },
         ]),
       })
@@ -56,7 +63,7 @@ function UserPage(props) {
     window.alert('Item bought, view in My Account');
     // console.log(item);
   }
-  async function handleCart(item) {
+  async function handleCart() {
     try {
       const res = await fetch('https://olxcloneserver.cyclic.app/add-to-cart', {
         method: 'POST',
@@ -66,7 +73,7 @@ function UserPage(props) {
         body: JSON.stringify([
           {
             userId: props.userId,
-            itemId: item._id,
+            itemId: viewItem._id,
           },
         ]),
       })
@@ -116,20 +123,44 @@ function UserPage(props) {
 
         {!isNewClicked && !isAccountClicked ? (
           <div className="userHomeDiv">
-            <Items
-              seed={seed}
-              onCartClick={handleCart}
-              onBuyClick={handleBuy}
-            />
+            {viewItem ? (
+              <ItemPage
+                itemName={viewItem.name}
+                itemPrice={viewItem.price}
+                itemImg={viewItem.imageUrl}
+                onBuy={handleBuy}
+                onCart={handleCart}
+                onBack={handleBack}
+              />
+            ) : (
+              <Items
+                seed={seed}
+                onCartClick={handleCart}
+                // onBuyClick={handleBuy}
+                onViewClick={handleView}
+              />
+            )}
           </div>
         ) : isAccountClicked ? (
-          <MyAccount
-            boughtItems={props?.boughtItems}
-            listedItems={props?.listedItems}
-            onBuyClick={handleBuy}
-            cartItems={props?.cartItems}
-            addNewItem={handleNewItem}
-          />
+          //View Item
+          viewItem ? (
+            <ItemPage
+              itemName={viewItem.name}
+              itemPrice={viewItem.price}
+              itemImg={viewItem.imageUrl}
+              onBuy={handleBuy}
+              onCart={handleCart}
+              onBack={handleBack}
+            />
+          ) : (
+            <MyAccount
+              boughtItems={props?.boughtItems}
+              listedItems={props?.listedItems}
+              onViewClick={handleView}
+              cartItems={props?.cartItems}
+              addNewItem={handleNewItem}
+            />
+          )
         ) : isNewClicked ? (
           <ListNewItem
             newUserData={newData}
@@ -139,11 +170,23 @@ function UserPage(props) {
           />
         ) : (
           <div className="userHomeDiv">
-            <Items
-              seed={seed}
-              onCartClick={handleCart}
-              onBuyClick={handleBuy}
-            />
+            {viewItem ? (
+              <ItemPage
+                itemName={viewItem.name}
+                itemPrice={viewItem.price}
+                itemImg={viewItem.imageUrl}
+                onBuy={handleBuy}
+                onCart={handleCart}
+                onBack={handleBack}
+              />
+            ) : (
+              <Items
+                seed={seed}
+                onCartClick={handleCart}
+                // onBuyClick={handleBuy}
+                onViewClick={handleView}
+              />
+            )}
           </div>
         )}
       </div>

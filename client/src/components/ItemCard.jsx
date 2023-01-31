@@ -36,27 +36,24 @@ function ItemCard(props) {
       </p>
       <p className="text-xl mb-2"> {props.itemName}</p>
 
-      <div>
-        {props.notShowCartBtn ? (
-          ''
-        ) : (
+      <div className="grid grid-cols-2 gap-4 py-2">
+        {props.showCartBtn && (
           <button
             type="button"
             onClick={props.onCartClick}
-            className="bg-[#faf6ff] shadow-md hover:bg-[#ffffff] text-slate-600 active:translate-y-1 text-base p-3 rounded-2xl border-none"
+            className="bg-[#faf6ff] shadow-md hover:bg-[#ffffff] text-slate-600 active:translate-y-1 text-base py-3 rounded-2xl border-none"
           >
-            add to cart🛒
+            Cart🛒
           </button>
         )}
-        {props.notShowBuyBtn ? (
-          ''
-        ) : (
+        {props.showViewBtn && (
           <button
             type="button"
-            onClick={props.onBuyClick}
-            className="bg-[#8c52ff] shadow-xl hover:bg-[#9460fd] active:translate-y-1 text-white text-base p-3 mx-[2.5%] my-[5%] rounded-2xl border-none"
+            // onClick={props.onBuyClick}
+            onClick={props.onViewClick}
+            className="bg-[#8c52ff] shadow-xl hover:bg-[#9460fd] active:translate-y-1 text-white text-base py-3 rounded-2xl border-none"
           >
-            buy now
+            View
           </button>
         )}
       </div>

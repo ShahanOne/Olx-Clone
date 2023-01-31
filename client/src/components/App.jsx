@@ -5,6 +5,7 @@ import Items from './Items';
 import Login from './Login';
 import Register from './Register';
 import UserPage from './UserPage';
+import ItemPage from './ItemPage';
 import Footer from './Footer';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [isSignClick, setSignClick] = useState(false);
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [userInfo, setUserInfo] = useState('');
+  const [viewItem, setViewItem] = useState('');
 
   function handleHome() {
     window.location.reload();
@@ -45,7 +47,12 @@ function App() {
     setAuthenticated((value) => !value);
     setUserInfo('');
   }
-
+  function handleView(item) {
+    setViewItem(item);
+  }
+  function handleBack() {
+    setViewItem('');
+  }
   return (
     <div className=" text-[#2e0f6a] font-allerta">
       {isAuthenticated ? (
@@ -84,25 +91,39 @@ function App() {
             // Nav3={}
             // onNav3={handleSignClick}
           />
-          <div className="welcome bg-[#8c52ff] pt-8 pb-28 lg:p-0">
-            <picture>
-              <source
-                media="(max-width: 600px)"
-                srcSet="/olxlandingphone4.png"
-              />
-              <img src="/olxlanding1.png" alt="landing" />
-            </picture>
-          </div>
+          {viewItem ? (
+            <ItemPage
+              itemName={viewItem.name}
+              itemPrice={viewItem.price}
+              itemImg={viewItem.imageUrl}
+              onBuy={handleSignInClick}
+              onCart={handleSignInClick}
+              onBack={handleBack}
+            />
+          ) : (
+            <>
+              <div className="welcome bg-[#8c52ff] pt-8 pb-28 lg:p-0">
+                <picture>
+                  <source
+                    media="(max-width: 600px)"
+                    srcSet="/olxlandingphone4.png"
+                  />
+                  <img src="/olxlanding1.png" alt="landing" />
+                </picture>
+              </div>
 
-          <div className="bg-purple-800 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
-            Let's Browse !{' '}
-          </div>
-          <Items
-            seed={''}
-            onBuyClick={handleSignInClick}
-            onCartClick={handleSignInClick}
-            isSignClicked={isSignClick}
-          />
+              <div className="bg-purple-800 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
+                Let's Browse !{' '}
+              </div>
+              <Items
+                seed={''}
+                // onBuyClick={handleSignInClick}
+                onViewClick={handleView}
+                onCartClick={handleSignInClick}
+                isSignClicked={isSignClick}
+              />
+            </>
+          )}
         </div>
       )}
       <Footer />

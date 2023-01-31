@@ -4,7 +4,7 @@ import './App.css';
 function ListNewItem(props) {
   const [itemName, setName] = useState('');
   const [itemPrice, setPrice] = useState('');
-  // const [itemImgUrl, setUrl] = useState('');
+  const [itemDescription, setItemDescription] = useState('');
   const [imgUrl, setImgUrl] = useState(); //file
   const [image, setImage] = useState('');
 
@@ -27,11 +27,11 @@ function ListNewItem(props) {
 
     setPrice(value);
   }
-  // function handleUrlChange(e) {
-  //   const { value } = e.target;
+  function handleDescriptionChange(e) {
+    const { value } = e.target;
 
-  //   setUrl(value);
-  // }
+    setItemDescription(value);
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     props.onTap();
@@ -47,6 +47,7 @@ function ListNewItem(props) {
             itemName: itemName,
             itemPrice: itemPrice,
             itemImgUrl: imgUrl,
+            itemDescription: itemDescription,
             userName: props.userName,
             userId: props.userId,
           },
@@ -60,16 +61,16 @@ function ListNewItem(props) {
   };
 
   return (
-    <div className=" font-allerta lg:my-8 px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
+    <div className=" font-allerta  px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
       <form
-        className="shadow-xl p-4 lg:p-[2%] bg-[#ddd2f3] rounded-lg"
+        className="shadow-xl p-4 lg:p-[5%] bg-[#ddd2f3] rounded-lg"
         onSubmit={handleSubmit}
       >
         <label htmlFor="itemName">
           Item Name <span className="text-red-500">*</span>
         </label>
         <input
-          className="block border-none rounded-sm w-[90%] h-[2rem] m-[3%_0] focus:outline-none"
+          className="block border-none rounded-sm w-[100%] h-[2rem] m-[3%_0] focus:outline-none"
           id="itemName"
           type="text"
           value={itemName}
@@ -80,25 +81,26 @@ function ListNewItem(props) {
           Item Price <span className="text-red-500">*</span>
         </label>
         <input
-          className="block border-none rounded-sm w-[90%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
+          className="block border-none rounded-sm w-[100%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
           id="itemPrice"
           type="number"
           value={itemPrice}
           onChange={handlePriceChange}
           name="itemPrice"
         />
+        <label htmlFor="itemDescription">Item Description</label>
+        <textarea
+          className="block border-none rounded-sm w-[100%] m-[3%_0] focus:outline-none"
+          id="itemDescription"
+          type="text"
+          value={itemDescription}
+          onChange={handleDescriptionChange}
+          name="itemDescription"
+        />
         <label className="text-md m-[1%_0]" htmlFor="uploadedImg">
           Item Image Url/Link
         </label>
         <br />
-        {/* <input
-          className="block border-none rounded-sm w-[90%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
-          id="itemImgUrl"
-          type="text"
-          value={itemImgUrl}
-          onChange={handleUrlChange}
-          name="itemImgUrl"
-        /> */}
         <input
           type="file"
           id="uploadedImg"
@@ -111,10 +113,10 @@ function ListNewItem(props) {
         {imgUrl ? (
           <div>
             {' '}
-            <img src={imgUrl} alt="uploaded-img" />{' '}
+            <img className="h-40 w-40 " src={imgUrl} alt="uploaded-img" />{' '}
             <button
               onClick={removeImg}
-              className="p-4 my-4 text-white rounded-lg shadow-md bg-red-500 hover:bg-red-600"
+              className="p-2 my-4 text-white rounded-lg shadow-md bg-red-500 hover:bg-red-600"
             >
               Remove
             </button>
