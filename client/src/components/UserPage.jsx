@@ -15,6 +15,7 @@ function UserPage(props) {
   function handleHome() {
     setAccountClick(false);
     setNewClick(false);
+    setViewItem('');
   }
   function handleNewItem() {
     setNewClick(true);
@@ -23,6 +24,7 @@ function UserPage(props) {
   function handleMyAcc() {
     setAccountClick(true);
     setNewClick(false);
+    setViewItem('');
   }
   function handleSignOut() {
     // window.location.reload();

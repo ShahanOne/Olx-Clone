@@ -46,6 +46,7 @@ function App() {
   function handleSignOut() {
     setAuthenticated((value) => !value);
     setUserInfo('');
+    setViewItem('');
   }
   function handleView(item) {
     setViewItem(item);
