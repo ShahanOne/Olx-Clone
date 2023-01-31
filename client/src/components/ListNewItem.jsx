@@ -7,6 +7,7 @@ function ListNewItem(props) {
   const [itemDescription, setItemDescription] = useState('');
   const [imgUrl, setImgUrl] = useState(); //file
   const [image, setImage] = useState('');
+  const [itemLink, setItemLink] = useState('');
 
   function handleImgUpload(e) {
     // console.log(e.target.files);
@@ -17,6 +18,12 @@ function ListNewItem(props) {
     setImage('');
     setImgUrl('');
   }
+  function handleLinkChange(e) {
+    const { value } = e.target;
+
+    setItemLink(value);
+    setImgUrl(value);
+  }
   function handleNameChange(e) {
     const { value } = e.target;
 
@@ -26,6 +33,10 @@ function ListNewItem(props) {
     const { value } = e.target;
 
     setPrice(value);
+  }
+  function handleLocalImgUpload() {
+    setItemLink('');
+    setImgUrl('');
   }
   function handleDescriptionChange(e) {
     const { value } = e.target;
@@ -70,7 +81,7 @@ function ListNewItem(props) {
           Item Name <span className="text-red-500">*</span>
         </label>
         <input
-          className="block border-none rounded-sm w-[100%] h-[2rem] m-[3%_0] focus:outline-none"
+          className="block border-none rounded-md w-[100%] h-[2rem] m-[3%_0] focus:outline-none"
           id="itemName"
           type="text"
           value={itemName}
@@ -81,7 +92,7 @@ function ListNewItem(props) {
           Item Price <span className="text-red-500">*</span>
         </label>
         <input
-          className="block border-none rounded-sm w-[100%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
+          className="block border-none rounded-md w-[100%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
           id="itemPrice"
           type="number"
           value={itemPrice}
@@ -90,7 +101,7 @@ function ListNewItem(props) {
         />
         <label htmlFor="itemDescription">Item Description</label>
         <textarea
-          className="block border-none rounded-sm w-[100%] m-[3%_0] focus:outline-none"
+          className="block border-none rounded-md w-[100%] m-[3%_0] focus:outline-none"
           id="itemDescription"
           type="text"
           value={itemDescription}
@@ -100,9 +111,20 @@ function ListNewItem(props) {
         <label className="text-md m-[1%_0]" htmlFor="uploadedImg">
           Item Image Url/Link
         </label>
-        <br />
+        <input
+          className="block border-none rounded-md w-[100%] px-2 h-[2rem] m-[3%_0] focus:outline-none"
+          id="itemLink"
+          type="text"
+          value={itemLink}
+          onChange={handleLinkChange}
+          name="itemLink"
+        />
+        <center className="text-lg">
+          <span className="py-2 px-4 bg-violet-100 rounded-lg">OR</span>
+        </center>
         <input
           type="file"
+          onClick={handleLocalImgUpload}
           id="uploadedImg"
           className="py-4 file:bg-white file:cursor-pointer file:p-2 hover:file:text-purple-700 file:text-purple-600 file:rounded file:shadow file:border-none"
           name="uploadedImg"
