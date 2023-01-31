@@ -97,6 +97,7 @@ function App() {
               itemName={viewItem.name}
               itemPrice={viewItem.price}
               itemImg={viewItem.imageUrl}
+              itemDescription={viewItem.itemDescription}
               onBuy={handleSignInClick}
               onCart={handleSignInClick}
               onBack={handleBack}

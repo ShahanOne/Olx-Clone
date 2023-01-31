@@ -44,8 +44,9 @@ function ItemPage(props) {
 
           <div className="itemDescription mt-4 md:mt-8 py-12 px-4 rounded-xl text-slate-600 bg-violet-200">
             <p className="italic">
-              Item Description Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Repellendus
+              {props.itemDescription
+                ? props.itemDescription
+                : 'Item description not provided'}
             </p>
           </div>
 
