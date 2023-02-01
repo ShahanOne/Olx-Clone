@@ -17,7 +17,7 @@ function ItemCard(props) {
   }
 
   return (
-    <div className="shadow-[0_10px_30px_rgba(140, 82, 255, 0.9)] bg-[#ffffff] sm:w-[16rem] mx-2 sm:mx-4 my-8 text-center py-1 sm:py-2 px-2 rounded-lg hover:-translate-y-2 hover:transition-transform">
+    <div className="shadow-[0_10px_30px_rgba(140, 82, 255, 0.9)] bg-[#ffffff] sm:w-[16rem] mx-2 sm:mx-4 my-8 text-center py-1 sm:py-2 px-2 rounded-lg sm:hover:-translate-y-2 hover:transition-transform">
       <button
         className=" bg-[#8c52ef] absolute cursor-default text-[rgb(253,253,253)] text-xs sm:text-sm px-2 py-1 sm:ml-6 mt-2 rounded-2xl shadow-lg border-none"
         style={!props.isSignClicked ? {} : { display: 'none' }}
