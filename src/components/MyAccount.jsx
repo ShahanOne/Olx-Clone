@@ -4,6 +4,33 @@ function MyAccount(props) {
   return (
     <div className="myAccountDiv px-[15%] lg:px-[12%] pt-[5%]">
       <div className="wishlistDiv ">
+        <p className="myAccountText text-2xl">My Wishlist :-</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {props.wishlist?.length ? (
+            props.wishlist.map((item, index) => (
+              <ItemCard
+                key={index}
+                itemName={item.name}
+                itemPrice={item.price}
+                itemIsSold={item.isSold}
+                showWishlistBtn={true}
+                showViewBtn={true}
+                onWishlist={() => props.onWishlist(item)}
+                onViewClick={() => props.onViewClick(item)}
+                itemImgUrl={item.imageUrl ? item.imageUrl : ''}
+              />
+            ))
+          ) : (
+            <p
+              className="noDataText 
+          m-[5%_2%]"
+            >
+              No wishlisted items!
+            </p>
+          )}
+        </div>
+      </div>
+      <div className="CartDiv ">
         <p className="myAccountText text-2xl">My Cart :-</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {props.cartItems?.length ? (
@@ -13,7 +40,7 @@ function MyAccount(props) {
                 itemName={item.name}
                 itemPrice={item.price}
                 itemIsSold={item.isSold}
-                showCartBtn={true}
+                showWishlistBtn={true}
                 showViewBtn={true}
                 onViewClick={() => props.onViewClick(item)}
                 itemImgUrl={item.imageUrl ? item.imageUrl : ''}
@@ -24,7 +51,7 @@ function MyAccount(props) {
               className="noDataText 
           m-[5%_2%]"
             >
-              No Wishlisted items!
+              No items in Cart!
             </p>
           )}
         </div>

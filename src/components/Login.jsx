@@ -3,6 +3,7 @@ import { useState } from 'react';
 function Login(props) {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [logStatus, setLogStatus] = useState('LogIn');
 
   function handleUserNameChange(e) {
     const { value } = e.target;
@@ -36,8 +37,10 @@ function Login(props) {
         );
     } catch (err) {
       console.log(err);
+      setLogStatus('Login');
     }
     props.onLogin();
+    setLogStatus('Login');
   };
 
   return (
@@ -80,8 +83,13 @@ function Login(props) {
           <button
             className="bg-[#8c52ff] shadow-md active:translate-y-0.5 text-white text-2xl m-[1%_0] p-[1%]  rounded-lg w-[100%] md:w-[92%] border border-[#8c51ff] hover:bg-[#6139b1] hover:cursor-pointer"
             type={userName && password ? 'submit' : 'button'}
+            onClick={() =>
+              userName && password
+                ? setLogStatus(<p className="italic text-xl">Logging in...</p>)
+                : ''
+            }
           >
-            LogIn
+            {logStatus}
           </button>
         </form>
 

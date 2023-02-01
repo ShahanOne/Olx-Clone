@@ -3,6 +3,7 @@ import './App.css';
 
 function ItemCard(props) {
   const [imgLoad, setLoad] = useState(false);
+  const [heart, setHeart] = useState('♡');
 
   function handleError() {
     setLoad(true);
@@ -37,13 +38,13 @@ function ItemCard(props) {
       <p className="text-xl mb-2"> {props.itemName}</p>
 
       <div className="grid grid-cols-2 gap-4 py-2">
-        {props.showCartBtn && (
+        {props.showWishlistBtn && (
           <button
             type="button"
-            onClick={props.onCartClick}
+            onClick={() => props.onWishlist() && setHeart('❤️')}
             className="bg-[#faf6ff] shadow-md hover:bg-[#ffffff] text-slate-600 active:translate-y-1 text-base py-3 rounded-2xl border-none"
           >
-            Cart🛒
+            Wishlist {heart}
           </button>
         )}
         {props.showViewBtn && (

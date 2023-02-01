@@ -29,10 +29,10 @@ https://olxcloneserver.cyclic.app/api`)
               itemPrice={item.price}
               itemIsSold={item.isSold}
               showViewBtn={!item.isSold}
-              showCartBtn={true}
+              showWishlistBtn={true}
               itemImgUrl={item.imageUrl ? item.imageUrl : ''}
               isSignClicked={props.isSignClicked}
-              onCartClick={() => props.onCartClick(item)}
+              onWishlist={() => props.onWishlist(item)}
               onViewClick={() => props.onViewClick(item)}
               // onBuyClick={() => props.onBuyClick(item)}
             />

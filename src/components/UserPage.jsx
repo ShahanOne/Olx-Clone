@@ -65,6 +65,8 @@ function UserPage(props) {
     window.alert('Item bought, view in My Account');
     // console.log(item);
   }
+
+  //Add to Cart
   async function handleCart() {
     try {
       const res = await fetch('https://olxcloneserver.cyclic.app/add-to-cart', {
@@ -86,6 +88,29 @@ function UserPage(props) {
     }
     window.alert('Item added to cart');
   }
+
+  //Add to Wishlist
+  async function handleWishlist(item) {
+    try {
+      const res = await fetch('http://localhost:3001/wishlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify([
+          {
+            userId: props.userId,
+            itemId: item._id,
+          },
+        ]),
+      })
+        .then((res) => res.json())
+        .then((data) => data !== 'poop' && props.newUserData(data));
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   function newData(data) {
     props.newUserData(data);
   }
@@ -138,8 +163,7 @@ function UserPage(props) {
             ) : (
               <Items
                 seed={seed}
-                onCartClick={handleCart}
-                // onBuyClick={handleBuy}
+                onWishlist={handleWishlist}
                 onViewClick={handleView}
               />
             )}
@@ -161,6 +185,8 @@ function UserPage(props) {
               boughtItems={props?.boughtItems}
               listedItems={props?.listedItems}
               onViewClick={handleView}
+              onWishlist={handleWishlist}
+              wishlist={props?.wishlist}
               cartItems={props?.cartItems}
               addNewItem={handleNewItem}
             />
@@ -187,8 +213,7 @@ function UserPage(props) {
             ) : (
               <Items
                 seed={seed}
-                onCartClick={handleCart}
-                // onBuyClick={handleBuy}
+                onWishlist={handleWishlist}
                 onViewClick={handleView}
               />
             )}

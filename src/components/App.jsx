@@ -63,6 +63,7 @@ function App() {
           userName={userInfo.username}
           boughtItems={userInfo.boughtItems}
           listedItems={userInfo.listedItems}
+          wishlist={userInfo.wishlist}
           cartItems={userInfo.cartItems}
           handleSignOut={handleSignOut}
         />
@@ -121,7 +122,7 @@ function App() {
                 seed={''}
                 // onBuyClick={handleSignInClick}
                 onViewClick={handleView}
-                onCartClick={handleSignInClick}
+                onWishlist={handleSignInClick}
                 isSignClicked={isSignClick}
               />
             </>
