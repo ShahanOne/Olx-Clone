@@ -92,7 +92,7 @@ function UserPage(props) {
   //Add to Wishlist
   async function handleWishlist(item) {
     try {
-      const res = await fetch('https://olxcloneserver.cyclic.app/wishlist', {
+      const res = await fetch('http://localhost:3001/wishlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,18 +133,18 @@ function UserPage(props) {
           </div>
           <div className="text-center">
             <img
-              className="inline-block w-24 sm:w-40"
+              className="hover:animate-spin inline-block w-40"
               src="/avatar2.png"
               alt=""
             />
           </div>
           <div className="refresh text-end my-4 lg:my-12 pr-8">
-            <span
-              className="text-white hover:cursor-pointer text-2xl p-4 rounded-lg active:shadow-sm  shadow-lg active:bg-[#8251e5] hover:text-[#f3eeff]"
+            <button
+              className="text-white active:translate-y-1 hover:cursor-pointer text-2xl p-4 rounded-lg active:shadow-sm  shadow-lg active:bg-[#8251e5] hover:text-[#f3eeff]"
               onClick={handleRerender}
             >
               Refresh
-            </span>
+            </button>
           </div>
         </div>
 

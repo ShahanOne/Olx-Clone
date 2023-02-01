@@ -14,25 +14,25 @@ function Navbar(props) {
       </div>
       <div className="grid grid-cols-4 py-4">
         <button
-          className="text-lg font-semibold bg-[#8251e5] border-none text-[#f1f1f6] hover:text-[#ffffff]"
+          className="text-lg font-semibold bg-[#8251e5] border-none active:translate-y-0.5 text-[#f1f1f6] hover:text-[#ffffff]"
           onClick={props.onNav1}
         >
           {props.Nav1}
         </button>{' '}
         <button
-          className="text-lg font-semibold bg-[#8251e5] border-none text-[#f1f1f6] hover:text-[#ffffff]"
+          className="text-lg font-semibold bg-[#8251e5] border-none active:translate-y-0.5 text-[#f1f1f6] hover:text-[#ffffff]"
           onClick={props.onNav2}
         >
           {props.Nav2}
         </button>{' '}
         <button
-          className="text-lg font-semibold bg-[#8251e5] border-none text-[#f1f1f6] hover:text-[#ffffff]"
+          className="text-lg font-semibold bg-[#8251e5] border-none active:translate-y-0.5 text-[#f1f1f6] hover:text-[#ffffff]"
           onClick={props.onNav3}
         >
           {props.Nav3}
         </button>{' '}
         <button
-          className="text-lg font-semibold bg-[#8251e5] border-none text-[#f1f1f6] hover:text-[#ffffff]"
+          className="text-lg font-semibold bg-[#8251e5] border-none active:translate-y-0.5 text-[#f1f1f6] hover:text-[#ffffff]"
           onClick={props.onNav4}
         >
           {props.Nav4}

@@ -85,7 +85,7 @@ function Login(props) {
             type={userName && password ? 'submit' : 'button'}
             onClick={() =>
               userName && password
-                ? setLogStatus(<p className="italic text-xl">Logging in...</p>)
+                ? setLogStatus(<p className="animate-pulse">Logging in...</p>)
                 : ''
             }
           >

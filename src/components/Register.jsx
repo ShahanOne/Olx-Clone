@@ -38,6 +38,7 @@ function Register(props) {
     }
     setUserName('');
     setPassword('');
+    props.onGoToLogin();
   };
   return (
     <div className="bg-[#51309246] font-allerta p-[3%_0_10%] fixed w-full h-screen">
