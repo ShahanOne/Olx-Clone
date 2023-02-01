@@ -2,10 +2,10 @@ import ItemCard from './ItemCard';
 
 function MyAccount(props) {
   return (
-    <div className="myAccountDiv px-[15%] lg:px-[12%] pt-[5%]">
+    <div className="myAccountDiv px-2 sm:px-[15%] lg:px-[12%] pt-[5%]">
       <div className="wishlistDiv ">
         <p className="myAccountText text-2xl">My Wishlist :-</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {props.wishlist?.length ? (
             props.wishlist.map((item, index) => (
               <ItemCard
@@ -32,7 +32,7 @@ function MyAccount(props) {
       </div>
       <div className="CartDiv ">
         <p className="myAccountText text-2xl">My Cart :-</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {props.cartItems?.length ? (
             props.cartItems.map((item, index) => (
               <ItemCard
@@ -61,7 +61,7 @@ function MyAccount(props) {
       min-h-80"
       >
         <p className="myAccountText text-2xl">Items Listed for Sale :-</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {props.listedItems?.length ? (
             props.listedItems.map((item, index) => (
               <ItemCard
@@ -97,7 +97,7 @@ function MyAccount(props) {
       min-h-80"
       >
         <p className="myAccountText text-2xl">Items Bought :-</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-8">
           {props.boughtItems?.length ? (
             props.boughtItems.map((item, index) => (
               <ItemCard
