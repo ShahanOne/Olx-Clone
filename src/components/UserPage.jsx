@@ -92,7 +92,7 @@ function UserPage(props) {
   //Add to Wishlist
   async function handleWishlist(item) {
     try {
-      const res = await fetch('http://localhost:3001/wishlist', {
+      const res = await fetch('https://olxcloneserver.cyclic.app/wishlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
