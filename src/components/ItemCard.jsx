@@ -27,14 +27,14 @@ function ItemCard(props) {
       </button>
       {!imgLoad ? (
         <img
-          className="h-[8rem] sm:h-[14rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
+          className="h-[10rem] sm:h-[14rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
           onError={handleError}
           src={props.itemImgUrl}
           alt="item-img"
         />
       ) : (
         <img
-          className="h-[8rem] sm:h-[14rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
+          className="h-[10rem] sm:h-[14rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
           src={props.itemImgUrl ? '/gif2.gif' : '/items4.webp'}
           alt="item-img"
         />
