@@ -115,8 +115,11 @@ function App() {
                 </picture>
               </div>
 
-              <div className="animate-bounce bg-purple-800 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
-                Let's Browse
+              <div className="bg-purple-800 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
+                <div className={!isSignClick ? 'animate-bounce' : ''}>
+                  Let's Browse{' '}
+                  <b className="bg-yellow-400 px-2 py-1 rounded-3xl">🡇</b>
+                </div>
               </div>
               <Items
                 seed={''}

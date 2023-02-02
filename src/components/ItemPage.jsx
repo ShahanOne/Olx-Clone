@@ -11,9 +11,9 @@ function ItemPage(props) {
     <div className=" px-8 py-4 md:p-12  bg-[#f0ebfb]">
       <button
         onClick={props.onBack}
-        className="px-4 py-2 bg-[#faf6ff] shadow-md hover:bg-[#ffffff] active:translate-y-1 text-base rounded-2xl border-none"
+        className="px-4 py-2 bg-[#faf6ff] shadow-md hover:bg-[#ffffff] active:translate-y-1 rounded-2xl border-none"
       >
-        <img src="/back1.png" alt="" />
+        <img src="/back1.png" className="w-6" alt="" />
       </button>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="imgColumn p-4 md:px-8 md:py-12">
