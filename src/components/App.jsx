@@ -105,21 +105,39 @@ function App() {
             />
           ) : (
             <>
-              <div className="welcome bg-[#8c52ff] pt-8 pb-28 lg:p-0">
-                <picture>
+              <div className="welcome grid grid-cols-1 sm:grid-cols-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-800 md:to-pink-600 py-4 lg:p-10">
+                <center className="py-10 sm:py-20">
+                  <p className="text-3xl lg:text-5xl my-4 font-fredoka text-[#f1f1f6]">
+                    Welcome to
+                  </p>
+                  <p className="text-6xl lg::text-7xl font-bold font-fredoka text-[#f1f1f6]">
+                    Olx Clone
+                  </p>
+                </center>
+                <div className="px-4 lg:p-0">
+                  <img
+                    className={`rounded-3xl h-[20rem] lg:h-[30rem] ${
+                      !isSignClick ? 'animate-slow-bounce' : ''
+                    } transition-transform`}
+                    src="/woman2.webp"
+                    alt=""
+                  />
+                </div>
+
+                {/* <picture>
                   <source
                     media="(max-width: 600px)"
                     srcSet="/olxlandingphone4.png"
                   />
                   <img src="/olxlanding1.png" alt="landing" />
-                </picture>
+                </picture> */}
               </div>
 
-              <div className="bg-purple-800 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
-                <div className={!isSignClick ? 'animate-bounce' : ''}>
-                  Let's Browse{' '}
-                  <b className="bg-yellow-400 px-2 py-1 rounded-3xl">🡇</b>
-                </div>
+              <div className="bg-gradient-to-r from-indigo-800 via-purple-700 to-purple-800 md:to-pink-700 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
+                {/* <div className={!isSignClick ? 'animate-bounce' : ''}> */}
+                Let's Browse{' '}
+                <b className="bg-purple-400 px-2 py-1 rounded-3xl">🡇</b>
+                {/* </div> */}
               </div>
               <Items
                 seed={''}

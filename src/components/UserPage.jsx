@@ -127,14 +127,14 @@ function UserPage(props) {
         onNav4={handleSignOut}
       />
       <div className="userPageDiv bg-[#f0ebfb]">
-        <div className="grid grid-cols-3 font-fredoka py-4 pl-8 bg-[#774ad1]">
+        <div className="grid grid-cols-3 font-fredoka py-8 lg:py-4 px-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-800 md:to-pink-600">
           <div className="userPageText my-4 lg:my-12 text-white text-2xl md:text-3xl lg:text-4xl">
             Hello {props.userName}
           </div>
           <div className="text-center">
             <img
-              className="hover:animate-spin inline-block w-40"
-              src="/avatar2.png"
+              className="animate-bounce-avatar rounded-full inline-block w-40"
+              src="/man.webp"
               alt=""
             />
           </div>

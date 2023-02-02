@@ -17,7 +17,7 @@ function ItemCard(props) {
   }
 
   return (
-    <div className="shadow-[0_10px_30px_rgba(140, 82, 255, 0.9)] bg-[#ffffff] sm:w-[16rem] mx-2 sm:mx-4 my-8 text-center py-1 sm:py-2 px-2 rounded-lg sm:hover:-translate-y-2 hover:transition-transform">
+    <div className="shadow-[0_10px_30px_rgba(140, 82, 255, 0.9)] bg-[#ffffff] sm:w-[16rem] mx-2 sm:mx-4 my-8 text-center rounded-lg px-1 sm:hover:-translate-y-2 hover:transition-transform">
       <button
         className=" bg-[#8c52ef] absolute cursor-default text-[rgb(253,253,253)] text-xs sm:text-sm px-2 py-1 sm:ml-6 mt-2 rounded-2xl shadow-lg border-none"
         style={!props.isSignClicked ? {} : { display: 'none' }}
@@ -27,14 +27,14 @@ function ItemCard(props) {
       </button>
       {!imgLoad ? (
         <img
-          className="h-[10rem] sm:h-[14rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
+          className="h-[9rem] sm:h-[12rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-t-lg rounded-b-lg"
           onError={handleError}
           src={props.itemImgUrl}
           alt="item-img"
         />
       ) : (
         <img
-          className="h-[10rem] sm:h-[14rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
+          className="h-[9rem] sm:h-[12rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
           src={props.itemImgUrl ? '/gif2.gif' : '/items4.webp'}
           alt="item-img"
         />
@@ -44,7 +44,7 @@ function ItemCard(props) {
       </p>
       <p className="text-md sm:text-xl sm:mb-2"> {props.itemName}</p>
 
-      <div className="grid grid-cols-2 gap-4 py-2">
+      <div className="grid grid-cols-2 gap-4 p-2">
         {props.showWishlistBtn && (
           <button
             type="button"
