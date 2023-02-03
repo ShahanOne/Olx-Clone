@@ -23,7 +23,15 @@ function ItemCard(props) {
         style={!props.isSignClicked ? {} : { display: 'none' }}
         type="button"
       >
-        {props.itemIsSold ? 'sold✅' : 'assured✔'}
+        {props.itemIsSold ? (
+          <p>
+            sold <b>✓</b>{' '}
+          </p>
+        ) : (
+          <p>
+            assured <b>✓</b>{' '}
+          </p>
+        )}
       </button>
       {!imgLoad ? (
         <img
@@ -59,7 +67,7 @@ function ItemCard(props) {
             type="button"
             // onClick={props.onBuyClick}
             onClick={props.onViewClick}
-            className="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-xl hover:to-indigo-600 hover:from-purple-500 active:translate-y-1 text-white text-xs sm:text-base py-3 rounded-2xl border-none"
+            className="bg-gradient-to-r from-purple-500 to-purple-600 shadow-xl hover:to-purple-600 hover:from-purple-400 active:translate-y-1 text-white text-xs sm:text-base py-3 rounded-2xl border-none"
           >
             View
           </button>

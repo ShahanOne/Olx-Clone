@@ -61,7 +61,7 @@ function ItemPage(props) {
             <button
               type="button"
               onClick={props.onBuy}
-              className="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-xl hover:to-indigo-600 hover:from-purple-500 active:translate-y-1 text-white text-base p-3 rounded-2xl border-none"
+              className="bg-gradient-to-r from-purple-500 to-purple-600 shadow-xl hover:to-purple-600 hover:from-purple-400 active:translate-y-1 text-white text-base p-3 rounded-2xl border-none"
             >
               Buy Now
             </button>
