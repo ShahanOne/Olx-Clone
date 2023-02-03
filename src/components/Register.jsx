@@ -78,7 +78,7 @@ function Register(props) {
           />
 
           <button
-            className="bg-[#8c52ff] shadow-md active:translate-y-0.5 text-white text-2xl m-[1%_0] p-[1%]  rounded-lg w-[100%] md:w-[92%] border border-[#8c51ff] hover:bg-[#6139b1] hover:cursor-pointer"
+            className="bg-gradient-to-r from-purple-500 to-purple-600 shadow-xl hover:to-purple-600 hover:from-purple-400 active:translate-y-0.5 text-white text-2xl m-[1%_0] p-[1%]  rounded-lg w-[100%] md:w-[92%] border border-[#8c51ff] hover:bg-[#6139b1] hover:cursor-pointer"
             type={userName && password ? 'submit' : 'button'}
           >
             Register
@@ -91,7 +91,7 @@ function Register(props) {
         </p>
         <button
           type="button"
-          className="bg-[#6139b1] shadow-sm active:translate-y-0.5 text-white text-2xl m-[1%_0] p-[1%]  rounded-lg w-[100%] md:w-[92%] border border-[#8c51ff] hover:bg-[#7a48de] hover:cursor-pointer"
+          className="bg-gradient-to-r from-purple-600 to-purple-800 shadow-xl hover:to-purple-500 hover:from-purple-600 active:translate-y-0.5 text-white text-2xl m-[1%_0] p-[1%]  rounded-lg w-[100%] md:w-[92%] border border-[#8c51ff] hover:bg-[#7a48de] hover:cursor-pointer"
           onClick={props.onGoToLogin}
         >
           Login
