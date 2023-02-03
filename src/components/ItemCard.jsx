@@ -19,7 +19,7 @@ function ItemCard(props) {
   return (
     <div className="shadow-[0_10px_30px_rgba(140, 82, 255, 0.9)] bg-[#ffffff] sm:w-[16rem] mx-2 sm:mx-4 my-8 text-center rounded-lg px-1 sm:hover:-translate-y-2 hover:transition-transform">
       <button
-        className=" bg-[#8c52ef] absolute cursor-default text-[rgb(253,253,253)] text-xs sm:text-sm px-2 py-1 sm:ml-6 mt-2 rounded-2xl shadow-lg border-none"
+        className=" bg-gradient-to-r from-purple-600 absolute cursor-default text-[rgb(253,253,253)] text-xs sm:text-sm px-2 py-1 sm:ml-6 mt-2 rounded-2xl shadow-lg border-none"
         style={!props.isSignClicked ? {} : { display: 'none' }}
         type="button"
       >
@@ -59,7 +59,7 @@ function ItemCard(props) {
             type="button"
             // onClick={props.onBuyClick}
             onClick={props.onViewClick}
-            className="bg-[#8c52ff] shadow-xl hover:bg-[#9460fd] active:translate-y-1 text-white text-xs sm:text-base py-3 rounded-2xl border-none"
+            className="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-xl hover:to-indigo-600 hover:from-purple-500 active:translate-y-1 text-white text-xs sm:text-base py-3 rounded-2xl border-none"
           >
             View
           </button>

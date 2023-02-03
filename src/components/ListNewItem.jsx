@@ -6,17 +6,18 @@ function ListNewItem(props) {
   const [itemPrice, setPrice] = useState('');
   const [itemDescription, setItemDescription] = useState('');
   const [imgUrl, setImgUrl] = useState(); //file
-  const [image, setImage] = useState('');
   const [itemLink, setItemLink] = useState('');
+  const [image, setImage] = useState('');
+  const [uploadStatus, setUploadStatus] = useState('Upload');
 
+  //Img Upload
   function handleImgUpload(e) {
-    // console.log(e.target.files);
-    setImgUrl(URL.createObjectURL(e.target.files[0]));
-    setImage(imgUrl);
+    setImage(e.target.files[0]);
   }
   function removeImg() {
     setImage('');
     setImgUrl('');
+    setUploadStatus('Upload');
   }
   function handleLinkChange(e) {
     const { value } = e.target;
@@ -43,6 +44,22 @@ function ListNewItem(props) {
 
     setItemDescription(value);
   }
+  function uploadImage() {
+    setUploadStatus(<div className="animate-pulse">Uploading...</div>);
+    const data = new FormData();
+    data.append('file', image);
+    data.append('upload_preset', 'img_upload');
+    data.append('cloud_name', 'dimzcf9j8');
+
+    fetch('  https://api.cloudinary.com/v1_1/dimzcf9j8/image/upload', {
+      method: 'post',
+      body: data,
+    })
+      .then((resp) => resp.json())
+      .then((data) => setImgUrl(data.url))
+      .catch((err) => console.log(err));
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     props.onTap();
@@ -70,9 +87,8 @@ function ListNewItem(props) {
       console.log(err);
     }
   };
-
   return (
-    <div className=" font-allerta  px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
+    <div className="font-allerta bg-gradient-to-r from-indigo-600 to-purple-800 sm:to-pink-600  px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
       <form
         className="shadow-xl p-4 lg:p-[5%] bg-[#ddd2f3] rounded-lg"
         onSubmit={handleSubmit}
@@ -129,9 +145,19 @@ function ListNewItem(props) {
           className="py-4 file:bg-white file:cursor-pointer file:p-2 hover:file:text-purple-700 file:text-purple-600 file:rounded file:shadow file:border-none"
           name="uploadedImg"
           onChange={handleImgUpload}
-          value={image}
+          // value={image}
           accept="image/png, image/jpeg,image/jpg,image/webp"
         />
+        <br />
+        {image && !imgUrl && (
+          <button
+            type="button"
+            className="p-2 text-white rounded-lg shadow-md bg-violet-500 hover:bg-violet-600"
+            onClick={uploadImage}
+          >
+            {uploadStatus}
+          </button>
+        )}
         {imgUrl ? (
           <div>
             {' '}

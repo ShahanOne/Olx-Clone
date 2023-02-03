@@ -8,7 +8,7 @@ function ItemPage(props) {
   }
 
   return (
-    <div className=" px-8 py-4 md:p-12  bg-[#f0ebfb]">
+    <div className=" px-8 py-4 md:p-12 bg-gradient-to-r from-violet-100 to-pink-100">
       <button
         onClick={props.onBack}
         className="px-4 py-2 bg-[#faf6ff] shadow-md hover:bg-[#ffffff] active:translate-y-1 rounded-2xl border-none"
@@ -61,7 +61,7 @@ function ItemPage(props) {
             <button
               type="button"
               onClick={props.onBuy}
-              className="bg-[#8c52ff] shadow-xl hover:bg-[#9460fd] active:translate-y-1 text-white text-base p-3 rounded-2xl border-none"
+              className="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-xl hover:to-indigo-600 hover:from-purple-500 active:translate-y-1 text-white text-base p-3 rounded-2xl border-none"
             >
               Buy Now
             </button>

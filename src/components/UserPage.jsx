@@ -126,8 +126,8 @@ function UserPage(props) {
         Nav4={'Sign Out'}
         onNav4={handleSignOut}
       />
-      <div className="userPageDiv bg-[#f0ebfb]">
-        <div className="grid grid-cols-3 font-fredoka py-8 lg:py-4 px-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-800 md:to-pink-600">
+      <div className="userPageDiv bg-gradient-to-r from-violet-100 to-pink-100">
+        <div className="grid grid-cols-3  font-fredoka py-8 lg:py-4 px-8 bg-gradient-to-r from-indigo-500 sm:via-purple-500 to-purple-800 md:to-pink-600">
           <div className="userPageText my-4 lg:my-12 text-white text-2xl md:text-3xl lg:text-4xl">
             Hello {props.userName}
           </div>
@@ -140,7 +140,7 @@ function UserPage(props) {
           </div>
           <div className="refresh text-end my-4 lg:my-12 pr-8">
             <button
-              className="text-white active:translate-y-1 hover:cursor-pointer text-2xl p-4 rounded-lg active:shadow-sm  shadow-lg active:bg-[#8251e5] hover:text-[#f3eeff]"
+              className="text-white active:translate-y-1 hover:cursor-pointer text-2xl p-4 rounded-lg active:shadow-sm  shadow-lg hover:text-[#f3eeff]"
               onClick={handleRerender}
             >
               Refresh

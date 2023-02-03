@@ -21,7 +21,7 @@ https://olxcloneserver.cyclic.app/api`)
   return (
     <>
       {itemData ? (
-        <div className="bg-[#f0ebfb] px-2 md:px-28 lg:px-36 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-8">
+        <div className="bg-gradient-to-r from-violet-100 to-pink-100 px-2 md:px-28 lg:px-36 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-8">
           {itemData.map((item, index) => (
             <ItemCard
               key={index}

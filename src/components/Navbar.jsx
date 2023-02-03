@@ -3,7 +3,7 @@ function Navbar(props) {
     window.location.reload();
   }
   return (
-    <nav className="py-[1%] grid grid-cols-1 sm:grid-cols-2 px-10 lg:px-4 font-fredoka bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-800 sm:to-pink-600">
+    <nav className="py-[1%] grid grid-cols-1 sm:grid-cols-2 px-10 lg:px-4 font-fredoka bg-gradient-to-r from-indigo-500 sm:via-purple-500 to-purple-800 sm:to-pink-600">
       <div className="py-2 text-center sm:text-start">
         <button
           className="text-[#f1f1f6] hover:text-[#ffffff] md:ml-6 text-4xl"

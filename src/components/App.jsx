@@ -54,6 +54,7 @@ function App() {
   function handleBack() {
     setViewItem('');
   }
+
   return (
     <div className=" text-[#2e0f6a] font-allerta">
       {isAuthenticated ? (
@@ -105,7 +106,7 @@ function App() {
             />
           ) : (
             <>
-              <div className="welcome grid grid-cols-1 sm:grid-cols-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-800 md:to-pink-600 py-4 lg:p-10">
+              <div className="welcome grid grid-cols-1 sm:grid-cols-2 bg-gradient-to-r from-indigo-500 sm:via-purple-500 to-purple-800 sm:to-pink-600 py-4 lg:p-10">
                 <center className="py-10 sm:py-20">
                   <p className="text-3xl lg:text-5xl my-4 font-fredoka text-[#f1f1f6]">
                     Welcome to
@@ -132,13 +133,13 @@ function App() {
                   <img src="/olxlanding1.png" alt="landing" />
                 </picture> */}
               </div>
-
-              <div className="bg-gradient-to-r from-indigo-800 via-purple-700 to-purple-800 md:to-pink-700 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
+              <div className="bg-gradient-to-r from-indigo-800 sm:via-purple-700 to-purple-800 sm:to-pink-700 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
                 {/* <div className={!isSignClick ? 'animate-bounce' : ''}> */}
                 Let's Browse{' '}
                 <b className="bg-purple-400 px-2 py-1 rounded-3xl">🡇</b>
                 {/* </div> */}
               </div>
+              <div></div>
               <Items
                 seed={''}
                 // onBuyClick={handleSignInClick}
