@@ -30,7 +30,7 @@ function ItemPage(props) {
             ) : (
               <img
                 className=" h-[14rem] md:h-[32rem]"
-                src={props.itemImg ? '/gif2.gif' : '/items4.webp'}
+                src={props.itemImg ? '/noLoad.png' : '/noImg.png'}
                 alt="item-img"
               />
             )}

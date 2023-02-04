@@ -42,67 +42,73 @@ function Login(props) {
     props.onLogin();
     setLogStatus('Login');
   };
+
   return (
-    <div className="bg-[#51309246] font-allerta p-[3%_0_10%] fixed w-full h-screen">
-      <div className="mx-[10%] my-[25%] md:my-[20%]  lg:m-[5%_34%] px-[5%] pt-2 pb-6 lg:p-[0_1%_2%_2.5%] bg-[#f7f3ff] rounded-lg text-[#2e0f6a]">
-        <p className=" text-end text-[2rem] m-0">
-          <b
-            className="hover:cursor-default hover:text-[#8c52ff]"
-            onClick={props.onCut}
-          >
-            x
-          </b>
-        </p>
-        <p className="authenticateText">
-          {' '}
-          Create an account or Log in with an existing account
-        </p>
-        <form onSubmit={handleSubmit}>
-          <label className=" text-lg m-[1%_0]" htmlFor="userName">
-            Username <span style={{ color: 'red' }}>*</span>
-          </label>
-          <input
-            className="block border-none rounded w-[100%] md:w-[90%] h-8 m-[3%_0] focus:outline-none"
-            type="text"
-            value={userName}
-            onChange={handleUserNameChange}
-            id="userName"
-          />
-          <label className=" text-lg m-[1%_0]" htmlFor="password">
-            Password <span style={{ color: 'red' }}>*</span>
-          </label>
-          <input
-            className="block border-none rounded w-[100%] md:w-[90%] h-8 m-[3%_0] focus:outline-none"
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            id="password"
-          />
-
-          <button
-            className="bg-gradient-to-r from-purple-500 to-purple-600 shadow-xl hover:to-purple-600 hover:from-purple-400 active:translate-y-0.5 text-white text-2xl m-[1%_0] p-[1%]  rounded-lg w-[100%] md:w-[92%] border border-[#8c51ff] hover:bg-[#6139b1] hover:cursor-pointer"
-            type={userName && password ? 'submit' : 'button'}
-            onClick={() =>
-              userName && password
-                ? setLogStatus(<p className="animate-pulse">Logging in...</p>)
-                : ''
-            }
-          >
-            {logStatus}
-          </button>
-        </form>
-
-        <p className="authenticateText py-2">
-          {' '}
-          Don't have an account? Register!
-        </p>
-        <button
-          className="bg-gradient-to-r from-purple-600 to-purple-800 shadow-xl hover:to-purple-500 hover:from-purple-600 active:translate-y-0.5 text-white text-2xl m-[1%_0] p-[1%]  rounded-lg w-[100%] md:w-[92%] border border-[#8c51ff] hover:bg-[#7a48de] hover:cursor-pointer"
-          type="button"
-          onClick={props.onGoToRegister}
+    <div className="font-fredoka bg-gradient-to-r from-indigo-600 to-purple-800 sm:to-pink-600 pb-8 md:p-[3%] w-full">
+      <p className=" text-end text-[2rem] px-4">
+        <b
+          className="hover:cursor-default font-fredoka text-[#e5e0f1] hover:text-white"
+          onClick={props.onCut}
         >
-          Register
-        </button>
+          x
+        </b>
+      </p>
+      <div className="bg-[#fcf0fe] text-violet-500 mx-8 md:mx-16 grid grid-cols-1 md:grid-cols-3 rounded-xl">
+        <div className="imgDiv col-span-2">
+          <img className="w-full h-full rounded-xl" src="/man3.webp" alt="" />
+        </div>
+        <div className="loginDiv px-4">
+          <p className="authenticateText font-fredoka text-xl md:text-3xl my-4 md:my-8">
+            {' '}
+            Log in with an existing account
+          </p>
+          <form onSubmit={handleSubmit}>
+            <label className="text-lg my-4" htmlFor="userName">
+              Username <span style={{ color: 'red' }}>*</span>
+            </label>
+            <input
+              className="block border-none rounded w-[100%] md:w-[90%] h-8 my-4 md:my-6 focus:outline-none"
+              type="text"
+              value={userName}
+              onChange={handleUserNameChange}
+              id="userName"
+            />
+            <label className="text-lg my-4" htmlFor="password">
+              Password <span style={{ color: 'red' }}>*</span>
+            </label>
+            <input
+              className="block border-none rounded w-[100%] md:w-[90%] h-8 my-4 md:my-6 focus:outline-none"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              id="password"
+            />
+
+            <button
+              className="bg-gradient-to-r from-violet-600 to-violet-400 shadow-xl hover:bg-purple-400 active:translate-y-0.5 text-white text-2xl my-4 md:my-6 p-[1%]  rounded-lg w-[100%] md:w-[92%] hover:cursor-pointer"
+              type={userName && password ? 'submit' : 'button'}
+              onClick={() =>
+                userName && password
+                  ? setLogStatus(<p className="animate-pulse">Logging in...</p>)
+                  : ''
+              }
+            >
+              {logStatus}
+            </button>
+          </form>
+
+          <p className="authenticateText text-xl mt-4 md:mt-12 py-2">
+            {' '}
+            Don't have an account? Register!
+          </p>
+          <button
+            className="bg-gradient-to-r from-violet-600 to-violet-400 shadow-xl hover:bg-purple-600 active:translate-y-0.5 text-white text-2xl my-6 p-[1%]  rounded-lg w-[100%] md:w-[92%] hover:cursor-pointer"
+            type="button"
+            onClick={props.onGoToRegister}
+          >
+            Register
+          </button>
+        </div>
       </div>
     </div>
   );

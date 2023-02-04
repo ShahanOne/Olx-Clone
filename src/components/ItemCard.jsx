@@ -43,7 +43,7 @@ function ItemCard(props) {
       ) : (
         <img
           className="h-[9rem] sm:h-[12rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
-          src={props.itemImgUrl ? '/gif2.gif' : '/items4.webp'}
+          src={props.itemImgUrl ? '/noLoad.png' : '/noImg.png'}
           alt="item-img"
         />
       )}
