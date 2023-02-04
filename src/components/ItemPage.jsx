@@ -11,30 +11,26 @@ function ItemPage(props) {
     <div className="p-4 md:p-12 bg-gradient-to-r from-violet-100 to-pink-100">
       <button
         onClick={props.onBack}
-        className="px-4 py-2 bg-[#faf6ff] shadow-md hover:bg-[#ffffff] active:translate-y-1 rounded-2xl border-none"
+        className=" px-4 py-2 bg-[#faf6ff] shadow-md hover:bg-[#ffffff] active:translate-y-1 rounded-2xl border-none"
       >
-        <img src="/back1.png" className="w-6" alt="" />
+        Go Back
       </button>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="imgColumn p-4 md:px-8 md:py-12">
-          {/* <img src={props.itemImg} alt="itemImg" /> */}
-          <center>
-            {' '}
-            {!imgLoad ? (
-              <img
-                className="h-[15rem] w-[20rem] md:w-[35rem] md:h-[32rem] rounded-md shadow-lg"
-                onError={handleError}
-                src={props.itemImg}
-                alt="item-img"
-              />
-            ) : (
-              <img
-                className="h-[15rem] w-[20rem] md:w-[35rem] md:h-[32rem] rounded-md shadow-lg"
-                src={props.itemImg ? '/noLoad.png' : '/noImg.png'}
-                alt="item-img"
-              />
-            )}
-          </center>
+          {!imgLoad ? (
+            <img
+              className="h-[15rem] w-[20rem] md:w-[35rem] md:h-[32rem] rounded-md shadow-lg"
+              onError={handleError}
+              src={props.itemImg}
+              alt="item-img"
+            />
+          ) : (
+            <img
+              className="h-[15rem] w-[20rem] md:w-[35rem] md:h-[32rem] rounded-md shadow-lg"
+              src={props.itemImg ? '/noLoad.png' : '/noImg.png'}
+              alt="item-img"
+            />
+          )}
         </div>
         <div className="detailsColumn px-4 py-1 md:py-12">
           <div className="info md:text-start">
@@ -54,7 +50,7 @@ function ItemPage(props) {
             <button
               type="button"
               onClick={props.onCart}
-              className="bg-[#faf6ff] shadow-md hover:bg-[#ffffff] text-slate-600 active:translate-y-1 text-base p-3 mx-2 rounded-2xl border-none"
+              className="bg-[#faf6ff] shadow-md hover:bg-[#ffffff] text-slate-600 active:translate-y-1 text-base p-3 mr-2 rounded-2xl border-none"
             >
               Add to Cart
             </button>
