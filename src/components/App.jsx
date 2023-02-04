@@ -136,7 +136,7 @@ function App() {
               <div className="bg-gradient-to-r from-indigo-800 sm:via-purple-700 to-purple-800 sm:to-pink-700 w-full py-8 lg:py-4 font-fredoka text-2xl text-center text-white">
                 {/* <div className={!isSignClick ? 'animate-bounce' : ''}> */}
                 Let's Browse{' '}
-                <b className="bg-purple-400 px-2 py-1 rounded-3xl">🡇</b>
+                <b className="bg-purple-400 px-2 py-1 rounded-3xl">☀️</b>
                 {/* </div> */}
               </div>
               <div></div>
