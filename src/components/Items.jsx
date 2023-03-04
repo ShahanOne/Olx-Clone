@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import SkeletonCard from './SkeletonCard';
 import ItemCard from './ItemCard';
 
 function Items(props) {
@@ -39,14 +40,20 @@ https://olxcloneserver.cyclic.app/api`)
           ))}
         </div>
       ) : (
-        <img
-          className="w-full mt-[30%] mb-[80%] md:mb-[30%] lg:mt-0 lg:mb-0"
-          src="/loading.gif"
-          alt="loading"
-        />
+        <div className="bg-gradient-to-r from-violet-100 to-pink-100 px-2 md:px-28 lg:px-40 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-8">
+          <SkeletonCard />
+          <SkeletonCard /> <SkeletonCard /> <SkeletonCard /> <SkeletonCard />
+          <SkeletonCard /> <SkeletonCard /> <SkeletonCard /> <SkeletonCard />
+          <SkeletonCard /> <SkeletonCard /> <SkeletonCard /> <SkeletonCard />
+        </div>
       )}
     </>
   );
 }
 
 export default Items;
+// <img
+//   className="w-full mt-[30%] mb-[80%] md:mb-[30%] lg:mt-0 lg:mb-0"
+//   src="/loading.gif"
+//   alt="loading"
+// />;
