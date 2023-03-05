@@ -59,7 +59,7 @@ function ItemCard(props) {
             onClick={() => props.onWishlist() && handleHeart()}
             className="bg-[#faf6ff] shadow-md hover:bg-[#ffffff] text-slate-600 active:translate-y-1 text-xs sm:text-base py-3 rounded-2xl border-none"
           >
-            Wishlist {heart}
+            Wish {heart}
           </button>
         )}
         {props.showViewBtn && (
