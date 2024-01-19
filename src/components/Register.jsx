@@ -42,7 +42,7 @@ function Register(props) {
   };
 
   return (
-    <div className="font-fredoka bg-gradient-to-r from-indigo-600 to-purple-800 sm:to-pink-600 pb-8 md:p-[3%] w-full fixed h-screen">
+    <div className="font-fredoka bg-gradient-to-r from-pink-400 to-red-500  pb-8 md:p-[3%] w-full fixed h-screen">
       <p className="text-end text-[2rem] px-4">
         <b
           className="hover:cursor-default text-[#e5e0f1] hover:text-white"
@@ -51,7 +51,7 @@ function Register(props) {
           x
         </b>
       </p>
-      <div className="bg-[#fcf0fe] text-violet-500 mx-8 md:mx-16 grid grid-cols-1 md:grid-cols-3 rounded-xl">
+      <div className="bg-[#fff2f5] text-red-400 mx-8 md:mx-16 grid grid-cols-1 md:grid-cols-3 rounded-xl">
         <div className="imgDiv col-span-2">
           <img className="w-full h-full rounded-xl" src="/man1.png" alt="" />
         </div>
@@ -84,7 +84,7 @@ function Register(props) {
             />
 
             <button
-              className="bg-gradient-to-r from-violet-600 to-violet-400 shadow-xl hover:from-violet-400 hover:to-violet-600 active:translate-y-0.5 text-white text-2xl my-4 md:my-6 p-[1%]  rounded-lg w-[100%] md:w-[92%] hover:cursor-pointer"
+              className=" bg-pink-500 shadow-md hover:bg-red-400  active:translate-y-0.5 text-white text-2xl my-4 md:my-6 p-[1%]  rounded-lg w-[100%] md:w-[92%] hover:cursor-pointer"
               type={userName && password ? 'submit' : 'button'}
             >
               Register
@@ -97,7 +97,7 @@ function Register(props) {
           </p>
           <button
             type="button"
-            className="bg-gradient-to-r from-violet-600 to-violet-400 shadow-xl hover:from-violet-600 hover:to-violet-700  active:translate-y-0.5 text-white text-2xl my-6 p-[1%]  rounded-lg w-[100%] md:w-[92%] hover:cursor-pointer"
+            className="bg-pink-500 shadow-md hover:bg-red-400  active:translate-y-0.5 text-white text-2xl my-6 p-[1%]  rounded-lg w-[100%] md:w-[92%] hover:cursor-pointer"
             onClick={props.onGoToLogin}
           >
             Login

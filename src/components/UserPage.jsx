@@ -126,8 +126,8 @@ function UserPage(props) {
         Nav4={'Sign Out'}
         onNav4={handleSignOut}
       />
-      <div className="userPageDiv bg-gradient-to-r from-violet-100 to-pink-100">
-        <div className="grid grid-cols-3  font-fredoka py-8 lg:py-4 px-8 bg-gradient-to-r from-indigo-500 sm:via-purple-500 to-purple-800 md:to-pink-600">
+      <div className="userPageDiv bg-pink-100">
+        <div className="grid grid-cols-3  font-fredoka py-8 lg:py-4 px-8 bg-gradient-to-r from-pink-400 to-red-500">
           <div className="userPageText my-4 lg:my-12 text-white text-2xl md:text-3xl lg:text-4xl">
             Hello {props.userName}
           </div>
@@ -162,7 +162,7 @@ function UserPage(props) {
               />
             ) : (
               <Items
-                seed={seed}
+              items={props.items}
                 onWishlist={handleWishlist}
                 onViewClick={handleView}
               />
@@ -212,7 +212,7 @@ function UserPage(props) {
               />
             ) : (
               <Items
-                seed={seed}
+              items={props.items}
                 onWishlist={handleWishlist}
                 onViewClick={handleView}
               />

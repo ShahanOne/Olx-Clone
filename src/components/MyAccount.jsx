@@ -85,7 +85,7 @@ function MyAccount(props) {
         <div className="addNewItemDiv text-center">
           <button
             className="listNewItemBtn 
-            bg-[#8c52ff] border-[#8c51ff] hover:bg-[#9460fd] text-white text-lg mb-8 p-[2%] lg:p-[1%] rounded-lg border shadow-lg"
+            bg-pink-400 hover:bg-pink-500 text-white text-lg mb-8 p-[2%] lg:p-[1%] rounded-lg border shadow-lg"
             onClick={props.addNewItem}
           >
             List New Item

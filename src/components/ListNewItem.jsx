@@ -88,9 +88,9 @@ function ListNewItem(props) {
     }
   };
   return (
-    <div className="font-allerta bg-gradient-to-r from-indigo-600 to-purple-800 sm:to-pink-600  px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
+    <div className="font-allerta bg-gradient-to-r from-pink-400 to-red-500 px-[5%] pt-[15%] pb-[50%] lg:p-[2%_25%_15%]">
       <form
-        className="shadow-xl p-4 lg:p-[5%] bg-[#ddd2f3] rounded-lg"
+        className="shadow-xl p-4 lg:p-[5%] bg-[#ffd5e4] rounded-lg"
         onSubmit={handleSubmit}
       >
         <label htmlFor="itemName">
@@ -136,13 +136,13 @@ function ListNewItem(props) {
           name="itemLink"
         />
         <center className="text-lg">
-          <span className="py-2 px-4 bg-violet-100 rounded-lg">OR</span>
+          <span className="py-2 px-4 bg-red-400 text-white rounded-lg">OR</span>
         </center>
         <input
           type="file"
           onClick={handleLocalImgUpload}
           id="uploadedImg"
-          className="py-4 file:bg-white file:cursor-pointer file:p-2 hover:file:text-purple-700 file:text-purple-600 file:rounded file:shadow file:border-none"
+          className="py-4 file:bg-white file:cursor-pointer file:p-2 hover:file:text-pink-600 file:text-pink-500 file:rounded file:shadow file:border-none"
           name="uploadedImg"
           onChange={handleImgUpload}
           // value={image}
@@ -152,7 +152,7 @@ function ListNewItem(props) {
         {image && !imgUrl && (
           <button
             type="button"
-            className="p-2 text-white rounded-lg shadow-md bg-violet-500 hover:bg-violet-600"
+            className="p-2 text-white rounded-lg shadow-md bg-pink-500 hover:bg-red-400"
             onClick={uploadImage}
           >
             {uploadStatus}
@@ -178,7 +178,7 @@ function ListNewItem(props) {
             style={
               itemName && itemPrice
                 ? { visibility: 'hidden' }
-                : { color: '#9b1414' }
+                : { color: '#9b1457' }
             }
           >
             Please fill in the required fields *
@@ -187,7 +187,7 @@ function ListNewItem(props) {
         <center>
           {' '}
           <button
-            className="bg-gradient-to-r from-purple-500 to-purple-600 shadow-xl hover:to-purple-600 hover:from-purple-500  border-[#8c51ff] shadow-lg active:translate-y-0.5  text-white text-xl w-[66%] p-[2%] m-[3%_0] rounded-2xl border-2"
+            className="bg-pink-500 hover:bg-red-400 shadow-lg active:translate-y-0.5  text-white text-xl w-[66%] p-[2%] m-[3%_0] rounded-2xl "
             type={itemName && itemPrice ? 'submit' : 'button'}
           >
             {' '}
