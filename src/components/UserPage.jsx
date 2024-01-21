@@ -163,6 +163,7 @@ function UserPage(props) {
             ) : (
               <Items
               items={props.items}
+              wishlist={props.wishlist}
                 onWishlist={handleWishlist}
                 onViewClick={handleView}
               />
@@ -213,6 +214,8 @@ function UserPage(props) {
             ) : (
               <Items
               items={props.items}
+                            wishlist={props.wishlist}
+
                 onWishlist={handleWishlist}
                 onViewClick={handleView}
               />

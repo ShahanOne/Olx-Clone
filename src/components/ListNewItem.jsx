@@ -142,7 +142,7 @@ function ListNewItem(props) {
           type="file"
           onClick={handleLocalImgUpload}
           id="uploadedImg"
-          className="py-4 file:bg-white file:cursor-pointer file:p-2 hover:file:text-pink-600 file:text-pink-500 file:rounded file:shadow file:border-none"
+          className="py-4 file:bg-white file:cursor-pointer file:p-2 hover:file:text-red-400 file:text-pink-500 file:rounded file:shadow file:border-none"
           name="uploadedImg"
           onChange={handleImgUpload}
           // value={image}
@@ -178,7 +178,7 @@ function ListNewItem(props) {
             style={
               itemName && itemPrice
                 ? { visibility: 'hidden' }
-                : { color: '#9b1457' }
+                : { color: '#ff7c7c' }
             }
           >
             Please fill in the required fields *

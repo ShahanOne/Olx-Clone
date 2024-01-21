@@ -90,7 +90,6 @@ function App() {
         setFilteredItems(items);
       }
     }, 1000);
-
     // Cleanup the timer when the input changes
     return () => clearTimeout(debounceTimer);
   }, [search, items]);

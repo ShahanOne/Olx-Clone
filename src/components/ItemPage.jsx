@@ -53,7 +53,7 @@ function ItemPage({onBack,onBuy,onCart,itemDescription,itemName,itemPrice,itemIm
             <button
               type="button"
               onClick={onBuy}
-              className="bg-pink-400 shadow-xl hover:bg-pink-500 active:translate-y-1 text-white text-base p-3 rounded-2xl border-none"
+              className="bg-pink-400 shadow-xl hover:bg-red-400 active:translate-y-1 text-white text-base p-3 rounded-2xl border-none"
             >
               Buy Now
             </button>

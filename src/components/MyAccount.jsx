@@ -1,23 +1,21 @@
 import ItemCard from './ItemCard';
 
-function MyAccount(props) {
+function MyAccount({wishlist,onWishlist,onViewClick,cartItems,listedItems,addNewItem,boughtItems}) {
   return (
     <div className="myAccountDiv px-2 sm:px-[15%] lg:px-[12%] pt-[5%]">
       <div className="wishlistDiv ">
-        <p className="myAccountText text-2xl">My Wishlist :-</p>
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {props.wishlist?.length ? (
-            props.wishlist.map((item, index) => (
+        <p className="myAccountText text-2xl inline-block text-pink-400">Wishlist</p>
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {wishlist?.length ? (
+            wishlist.map((item, index) => (
               <ItemCard
                 key={index}
-                itemName={item.name}
-                itemPrice={item.price}
-                itemIsSold={item.isSold}
+                item={item}
+                wishlist={wishlist}
                 showWishlistBtn={true}
                 showViewBtn={true}
-                onWishlist={() => props.onWishlist(item)}
-                onViewClick={() => props.onViewClick(item)}
-                itemImgUrl={item.imageUrl ? item.imageUrl : ''}
+                onWishlist={() => onWishlist(item)}
+                onViewClick={() => onViewClick(item)}
               />
             ))
           ) : (
@@ -31,19 +29,16 @@ function MyAccount(props) {
         </div>
       </div>
       <div className="CartDiv ">
-        <p className="myAccountText text-2xl">My Cart :-</p>
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {props.cartItems?.length ? (
-            props.cartItems.map((item, index) => (
+        <p className="myAccountText text-2xl inline-block text-pink-400">Cart</p>
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {cartItems?.length ? (
+            cartItems.map((item, index) => (
               <ItemCard
                 key={index}
-                itemName={item.name}
-                itemPrice={item.price}
-                itemIsSold={item.isSold}
+               item={item}
                 showWishlistBtn={true}
                 showViewBtn={true}
-                onViewClick={() => props.onViewClick(item)}
-                itemImgUrl={item.imageUrl ? item.imageUrl : ''}
+                onViewClick={() => onViewClick(item)}
               />
             ))
           ) : (
@@ -60,16 +55,13 @@ function MyAccount(props) {
         className="listedItemsDiv 
       min-h-80"
       >
-        <p className="myAccountText text-2xl">Items Listed for Sale :-</p>
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {props.listedItems?.length ? (
-            props.listedItems.map((item, index) => (
+        <p className="myAccountText text-2xl inline-block text-pink-400">Listed for Sale</p>
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {listedItems?.length ? (
+            listedItems.map((item, index) => (
               <ItemCard
                 key={index}
-                itemName={item.name}
-                itemPrice={item.price}
-                itemIsSold={item.isSold}
-                itemImgUrl={item.imageUrl ? item.imageUrl : ''}
+             item={item}
               />
             ))
           ) : (
@@ -85,8 +77,8 @@ function MyAccount(props) {
         <div className="addNewItemDiv text-center">
           <button
             className="listNewItemBtn 
-            bg-pink-400 hover:bg-pink-500 text-white text-lg mb-8 p-[2%] lg:p-[1%] rounded-lg border shadow-lg"
-            onClick={props.addNewItem}
+            bg-pink-400 hover:bg-red-400 text-white text-lg mb-8 p-[2%] lg:p-[1%] rounded-lg shadow-md"
+            onClick={addNewItem}
           >
             List New Item
           </button>
@@ -96,18 +88,15 @@ function MyAccount(props) {
         className="boughtItemsDiv 
       min-h-80"
       >
-        <p className="myAccountText text-2xl">Items Bought :-</p>
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-8">
-          {props.boughtItems?.length ? (
-            props.boughtItems.map((item, index) => (
+        <p className="myAccountText text-2xl inline-block text-pink-400">Bought</p>
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 pb-8">
+          {boughtItems?.length ? (
+            boughtItems.map((item, index) => (
               <ItemCard
                 key={index}
-                itemName={item.name}
-                itemPrice={item.price}
-                itemIsSold={''}
+            item={item}
                 notShowBuyBtn={true}
                 notShowCartBtn={true}
-                itemImgUrl={item.imageUrl ? item.imageUrl : ''}
               />
             ))
           ) : (

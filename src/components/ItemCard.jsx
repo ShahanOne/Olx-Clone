@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { GoHeart,GoHeartFill } from "react-icons/go";
 
@@ -7,15 +7,13 @@ function ItemCard({
   showViewBtn,
   showWishlistBtn,
   onWishlist,
-  itemImgUrl,
-  itemIsSold,
-  itemPrice,
-  itemName,
+  item,
+  wishlist,
   onViewClick
 }) {
   const [imgLoad, setLoad] = useState(false);
-  let simpleHeart = <GoHeart fontSize={18} className='pt-1'/>
-  let filledHeart = <GoHeartFill fontSize={18} className='pt-1'/>
+  let simpleHeart = <GoHeart fontSize={18} className='pt-2/3'/>
+  let filledHeart = <GoHeartFill fontSize={20} className='pt-2/3 text-red-400'/>
   const [heart, setHeart] = useState(simpleHeart);
 
   function handleError() {
@@ -25,8 +23,15 @@ function ItemCard({
 function handleHeart() {
   setHeart((prevHeart) => (prevHeart === simpleHeart ? filledHeart : simpleHeart));
 }
+const isWishlisted = wishlist?.some((wish) => wish._id === item._id)
+useEffect(()=>{
+  if (isWishlisted){
+setHeart(filledHeart)
+  } else{
+    setHeart(simpleHeart)
+  }
 
-
+},[])
   return (
     <div className="shadow-[0_10px_30px_rgba(80, 200,120, 0.9)] bg-[#ffffff] sm:w-[16rem] mx-2 sm:mx-4 my-8 text-center rounded-lg px-1 sm:hover:-translate-y-2 hover:transition-transform">
       <button
@@ -34,7 +39,7 @@ function handleHeart() {
         style={!isSignClicked ? {} : { display: 'none' }}
         type="button"
       >
-        {itemIsSold ? (
+        {item?.isSold ? (
           <p>
             sold <b>✓</b>{' '}
           </p>
@@ -48,20 +53,20 @@ function handleHeart() {
         <img
           className="h-[9rem] sm:h-[12rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-t-lg rounded-b-lg"
           onError={handleError}
-          src={itemImgUrl}
+          src={item?.imageUrl}
           alt="item-img"
         />
       ) : (
         <img
           className="h-[9rem] sm:h-[12rem] w-full shadow-[0_8px_40px_rgb(0,0,0,0.12)] rounded-lg"
-          src={itemImgUrl ? '/noLoad.png' : '/noImg.png'}
+          src={item?.imageUrl ? '/noLoad.png' : '/noImg.png'}
           alt="item-img"
         />
       )}
       <p className="text-md sm:text-lg my-2 font-sans font-semibold">
-        ₹ {itemPrice}
+        ₹ {item?.price}
       </p>
-      <p className="text-md sm:text-xl sm:mb-2"> {itemName}</p>
+      <p className="text-md sm:text-xl sm:mb-2"> {item?.name}</p>
 
       <div className="grid grid-cols-2 gap-4 p-2">
         {showWishlistBtn && (
@@ -78,7 +83,7 @@ function handleHeart() {
             type="button"
             // onClick={onBuyClick}
             onClick={onViewClick}
-            className="bg-pink-400 shadow-xl hover:bg-pink-500 active:translate-y-1 text-white text-xs sm:text-base py-3 rounded-2xl border-none"
+            className="bg-pink-400 shadow-xl hover:bg-red-400 active:translate-y-1 text-white text-xs sm:text-base py-3 rounded-2xl border-none"
           >
             View
           </button>
