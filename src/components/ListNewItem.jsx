@@ -65,22 +65,25 @@ function ListNewItem(props) {
     props.onTap();
 
     try {
-      const res = await fetch('https://olxcloneserver.cyclic.app/new-item', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify([
-          {
-            itemName: itemName,
-            itemPrice: itemPrice,
-            itemImgUrl: imgUrl,
-            itemDescription: itemDescription,
-            userName: props.userName,
-            userId: props.userId,
+      const res = await fetch(
+        'https://hard-dolley-shahanone.koyeb.app/new-item',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
           },
-        ]),
-      })
+          body: JSON.stringify([
+            {
+              itemName: itemName,
+              itemPrice: itemPrice,
+              itemImgUrl: imgUrl,
+              itemDescription: itemDescription,
+              userName: props.userName,
+              userId: props.userId,
+            },
+          ]),
+        }
+      )
         .then((res) => res.json())
         .then((data) => data !== 'poop' && props.newUserData(data));
     } catch (err) {

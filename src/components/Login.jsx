@@ -19,7 +19,7 @@ function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://olxcloneserver.cyclic.app/login', {
+      const res = await fetch('https://hard-dolley-shahanone.koyeb.app/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://olxcloneserver.cyclic.app",
+  "proxy": "https://hard-dolley-shahanone.koyeb.app",
   "eslintConfig": {
     "extends": [
       "react-app",

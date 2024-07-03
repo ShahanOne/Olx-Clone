@@ -19,18 +19,21 @@ function Register(props) {
     e.preventDefault();
     props.onRegister();
     try {
-      const res = await fetch('https://olxcloneserver.cyclic.app/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify([
-          {
-            username: userName,
-            password: password,
+      const res = await fetch(
+        'https://hard-dolley-shahanone.koyeb.app/register',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
           },
-        ]),
-      })
+          body: JSON.stringify([
+            {
+              username: userName,
+              password: password,
+            },
+          ]),
+        }
+      )
         .then((res) => res.json())
         .then((data) => console.log(data));
     } catch (err) {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FiSearch } from "react-icons/fi";
+import { FiSearch } from 'react-icons/fi';
 import './App.css';
 import Navbar from './Navbar';
 import Items from './Items';
@@ -16,12 +16,12 @@ function App() {
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [userInfo, setUserInfo] = useState('');
   const [items, setItems] = useState();
-  const [filteredItems,setFilteredItems] = useState()
+  const [filteredItems, setFilteredItems] = useState();
   const [seed, setSeed] = useState(1);
 
   const [viewItem, setViewItem] = useState('');
 
-  const [search,setSearch] = useState('')
+  const [search, setSearch] = useState('');
 
   function handleHome() {
     window.location.reload();
@@ -63,20 +63,20 @@ function App() {
     setViewItem('');
   }
 
-     const getItems = async () => {
-      try{
-        const res = await axios.get('https://olxcloneserver.cyclic.app/api')
-        setItems(res.data)
-      }catch(err){
-        console.log(err);
-      }
+  const getItems = async () => {
+    try {
+      const res = await axios.get(
+        'https://hard-dolley-shahanone.koyeb.app/api'
+      );
+      setItems(res.data);
+    } catch (err) {
+      console.log(err);
     }
-
+  };
 
   useEffect(() => {
     getItems();
   }, [seed]);
-
 
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
@@ -97,7 +97,7 @@ function App() {
     <div className=" text-slate-700 font-allerta">
       {isAuthenticated ? (
         <UserPage
-        items={items}
+          items={items}
           newUserData={refreshUserData}
           userId={userInfo._id}
           userName={userInfo.username}
@@ -163,22 +163,21 @@ function App() {
                     alt=""
                   />
                 </div>
-
               </div>
               <div className="flex justify-center gap-2 bg-gradient-to-r from-pink-400 to-red-500 w-full py-8 lg:py-4 font-fredoka text-lg text-white">
-            <FiSearch fontSize={24} className='mt-5'/> 
-             <input 
-              className='p-3 rounded-full m-2 w-2/3 text-slate-400 outline-none' 
-              placeholder='Search for something...'
-              onChange={(e)=>setSearch(e.target.value)}
-              value={search}
-              />
-              
+                <FiSearch fontSize={24} className="mt-5" />
+                <input
+                  className="p-3 rounded-full m-2 w-2/3 text-slate-400 outline-none"
+                  placeholder="Search for something..."
+                  onChange={(e) => setSearch(e.target.value)}
+                  value={search}
+                />
+
                 {/* Let's Browse{' '}
                 <b className="bg-purple-400 px-2 py-1 rounded-3xl">☀️</b> */}
               </div>
               <Items
-              items={filteredItems}
+                items={filteredItems}
                 onViewClick={handleView}
                 onWishlist={handleSignInClick}
                 isSignClicked={isSignClick}
